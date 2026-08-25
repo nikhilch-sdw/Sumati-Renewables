@@ -30,7 +30,7 @@ function initThemeToggle() {
   themeBtn.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    
+
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('sumati_theme', newTheme);
     updateThemeIcon(themeBtn, newTheme);
@@ -60,7 +60,7 @@ function initHeaderScroll() {
 function initMobileNav() {
   const toggleBtn = document.getElementById('mobile-nav-toggle');
   const navMenu = document.getElementById('nav-menu');
-  
+
   if (!toggleBtn || !navMenu) return;
 
   toggleBtn.addEventListener('click', () => {
@@ -112,7 +112,7 @@ function initRefractionSimulator() {
       btnReflective.classList.add('active');
       btnFlat.classList.remove('active');
       mode = 'reflective';
-      document.getElementById('refraction-status-text').innerHTML = 
+      document.getElementById('refraction-status-text').innerHTML =
         '<strong style="color: var(--accent-green);">Sumati Reflective PV Busbar:</strong> Incident light strikes 3D triangular micro-grooves and redirects 100% into silicon wafer cell substrate (+1.52% power gain!).';
     });
 
@@ -120,7 +120,7 @@ function initRefractionSimulator() {
       btnFlat.classList.add('active');
       btnReflective.classList.remove('active');
       mode = 'flat';
-      document.getElementById('refraction-status-text').innerHTML = 
+      document.getElementById('refraction-status-text').innerHTML =
         '<strong style="color: #ef4444;">Standard Flat Ribbon:</strong> Incident light reflects off smooth copper back up into module glass and sky (Wasted Optical Loss!).';
     });
   }
@@ -542,7 +542,7 @@ function initRFQForm() {
 
   rfqForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     const name = document.getElementById('rfq-name').value;
     const product = document.getElementById('rfq-product').value;
 
@@ -571,7 +571,7 @@ function initStatCounters() {
 
   function checkScroll() {
     if (animated) return;
-    
+
     const triggerPos = window.innerHeight * 0.85;
     statNumbers.forEach(stat => {
       const top = stat.getBoundingClientRect().top;
@@ -602,4 +602,18 @@ function initStatCounters() {
 
   window.addEventListener('scroll', checkScroll);
   checkScroll();
+}
+const timer = setInterval(() => {
+  current += step;
+  if (current >= target) {
+    element.textContent = prefix + target + suffix;
+    clearInterval(timer);
+  } else {
+    element.textContent = prefix + Math.floor(current) + suffix;
+  }
+}, 30);
+  }
+
+window.addEventListener('scroll', checkScroll);
+checkScroll();
 }
