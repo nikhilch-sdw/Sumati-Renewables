@@ -201,11 +201,11 @@ function initRefractionSimulator() {
     const ribY = centerY - ribH;
 
     if (mode === 'reflective') {
-      // 3D Gold Metallic Base
+      // 3D Metallic Royal Blue Base
       const ribGrad = ctx.createLinearGradient(startX, ribY, startX + ribWidth, ribY);
-      ribGrad.addColorStop(0, '#b45309');
-      ribGrad.addColorStop(0.5, '#f59e0b');
-      ribGrad.addColorStop(1, '#b45309');
+      ribGrad.addColorStop(0, '#1e3a8a');
+      ribGrad.addColorStop(0.5, '#305EBA');
+      ribGrad.addColorStop(1, '#1e3a8a');
       ctx.fillStyle = ribGrad;
       ctx.fillRect(startX, ribY, ribWidth, ribH);
 
@@ -215,8 +215,8 @@ function initRefractionSimulator() {
       for (let i = 0; i < numPrisms; i++) {
         const px = startX + i * prismW;
         
-        // Left Facet (Light Gold)
-        ctx.fillStyle = '#fde047';
+        // Left Facet (Bright Royal Blue Highlight)
+        ctx.fillStyle = '#60a5fa';
         ctx.beginPath();
         ctx.moveTo(px, ribY);
         ctx.lineTo(px + prismW / 2, ribY - 10);
@@ -224,8 +224,8 @@ function initRefractionSimulator() {
         ctx.closePath();
         ctx.fill();
 
-        // Right Facet (Dark Gold Shadow)
-        ctx.fillStyle = '#d97706';
+        // Right Facet (Deep Royal Blue Shadow)
+        ctx.fillStyle = '#1d4ed8';
         ctx.beginPath();
         ctx.moveTo(px + prismW / 2, ribY - 10);
         ctx.lineTo(px + prismW, ribY);
@@ -233,7 +233,7 @@ function initRefractionSimulator() {
         ctx.closePath();
         ctx.fill();
 
-        ctx.strokeStyle = '#78350f';
+        ctx.strokeStyle = '#1e3a8a';
         ctx.lineWidth = 1;
         ctx.stroke();
       }
