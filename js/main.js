@@ -1,5 +1,5 @@
 /**
- * Sumati Renewables - Main Controller (Clean High-Visibility Video & Stats Edition)
+ * Sumati Renewables - Main Controller (Ultra-Premium 3D Refraction Simulator Edition)
  * Author: Antigravity AI
  */
 
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMfgSimulator();
   initProductFilter();
   initProductModal();
+  initGalleryLightbox();
   initRibbonCalculator();
   initRFQForm();
   initStatCounters();
@@ -30,7 +31,7 @@ function initThemeToggle() {
   themeBtn.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
+    
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('sumati_theme', newTheme);
     updateThemeIcon(themeBtn, newTheme);
@@ -60,7 +61,7 @@ function initHeaderScroll() {
 function initMobileNav() {
   const toggleBtn = document.getElementById('mobile-nav-toggle');
   const navMenu = document.getElementById('nav-menu');
-
+  
   if (!toggleBtn || !navMenu) return;
 
   toggleBtn.addEventListener('click', () => {
@@ -85,7 +86,7 @@ function initMobileNav() {
 }
 
 /* ==========================================================================
-   3. Interactive 3D Solar Light Refraction Simulator
+   3. Ultra-Premium Interactive 3D Solar Light Refraction Simulator
    ========================================================================== */
 function initRefractionSimulator() {
   const canvas = document.getElementById('refraction-canvas');
@@ -102,151 +103,248 @@ function initRefractionSimulator() {
 
   let mode = 'reflective'; // 'reflective' or 'flat'
   let sunAngle = 45;
+  let photonOffset = 0;
 
   const btnReflective = document.getElementById('switch-reflective');
   const btnFlat = document.getElementById('switch-flat');
   const angleSlider = document.getElementById('sun-angle-slider');
+  const angleLabel = document.getElementById('sun-angle-val');
+  const boostMetric = document.getElementById('metric-boost-val');
+  const statusText = document.getElementById('refraction-status-text');
 
   if (btnReflective && btnFlat) {
     btnReflective.addEventListener('click', () => {
       btnReflective.classList.add('active');
       btnFlat.classList.remove('active');
       mode = 'reflective';
-      document.getElementById('refraction-status-text').innerHTML =
-        '<strong style="color: var(--accent-green);">Sumati Reflective PV Busbar:</strong> Incident light strikes 3D triangular micro-grooves and redirects 100% into silicon wafer cell substrate (+1.52% power gain!).';
+      if (boostMetric) {
+        boostMetric.textContent = '+1.52% Efficiency';
+        boostMetric.style.color = 'var(--accent-green)';
+      }
+      if (statusText) {
+        statusText.innerHTML = 
+          '<strong style="color: var(--accent-green);">Sumati Reflective PV Busbar:</strong> 120° micro-grooves redirect 100% of incident light directly into silicon wafer substrate (+1.52% energy boost!).';
+      }
     });
 
     btnFlat.addEventListener('click', () => {
       btnFlat.classList.add('active');
       btnReflective.classList.remove('active');
       mode = 'flat';
-      document.getElementById('refraction-status-text').innerHTML =
-        '<strong style="color: #ef4444;">Standard Flat Ribbon:</strong> Incident light reflects off smooth copper back up into module glass and sky (Wasted Optical Loss!).';
+      if (boostMetric) {
+        boostMetric.textContent = '0.00% Optical Loss';
+        boostMetric.style.color = '#ef4444';
+      }
+      if (statusText) {
+        statusText.innerHTML = 
+          '<strong style="color: #ef4444;">Standard Flat Ribbon:</strong> Incident sunlight strikes flat copper and bounces straight back up out into sky (Wasted Optical Loss!).';
+      }
     });
   }
 
   if (angleSlider) {
     angleSlider.addEventListener('input', (e) => {
       sunAngle = parseInt(e.target.value);
+      if (angleLabel) angleLabel.textContent = `${sunAngle}°`;
     });
   }
-
-  let rayOffset = 0;
 
   function renderRefraction() {
     ctx.clearRect(0, 0, width, height);
 
-    const centerY = height * 0.65;
-    const ribWidth = 160;
+    photonOffset = (photonOffset + 1.2) % 30;
+
+    const centerY = height * 0.72;
+    const ribWidth = Math.min(320, width * 0.62);
     const startX = width / 2 - ribWidth / 2;
 
-    // Silicon Substrate
-    ctx.fillStyle = '#0f172a';
-    ctx.fillRect(40, centerY, width - 80, 100);
+    // 1. Silicon Wafer Substrate Base (Deep Metallic Wafer with Photovoltaic Finger Grid)
+    const subY = centerY + 10;
+    const subH = height - subY - 15;
+    const subW = width - 40;
 
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+    const waferGrad = ctx.createLinearGradient(0, subY, 0, subY + subH);
+    waferGrad.addColorStop(0, '#061324');
+    waferGrad.addColorStop(1, '#020610');
+    ctx.fillStyle = waferGrad;
+    ctx.fillRect(20, subY, subW, subH);
+
+    ctx.strokeStyle = 'rgba(6, 182, 212, 0.5)';
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(20, subY, subW, subH);
+
+    // Fine Silicon Busbar Finger Grid Lines
+    ctx.strokeStyle = 'rgba(6, 182, 212, 0.12)';
     ctx.lineWidth = 1;
-    for (let x = 60; x < width - 60; x += 25) {
+    for (let gx = 35; gx < width - 30; gx += 20) {
       ctx.beginPath();
-      ctx.moveTo(x, centerY);
-      ctx.lineTo(x, centerY + 100);
+      ctx.moveTo(gx, subY);
+      ctx.lineTo(gx, subY + subH);
       ctx.stroke();
     }
 
-    // Glass Layer
-    ctx.strokeStyle = 'rgba(6, 182, 212, 0.4)';
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.moveTo(20, centerY - 140);
-    ctx.lineTo(width - 20, centerY - 140);
-    ctx.stroke();
+    ctx.fillStyle = 'rgba(6, 182, 212, 0.85)';
+    ctx.font = '700 12px Outfit, sans-serif';
+    ctx.fillText('ACTIVE SILICON CELL SUBSTRATE (99.9% PHOTON ABSORPTION)', 35, subY + 24);
 
-    ctx.fillStyle = 'rgba(6, 182, 212, 0.06)';
-    ctx.fillRect(20, centerY - 140, width - 40, 140);
+    // 2. Glass Cover & Encapsulant Layer
+    const glassY = centerY - 130;
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.04)';
+    ctx.fillRect(20, glassY, subW, 115);
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.18)';
+    ctx.strokeRect(20, glassY, subW, 115);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+    ctx.fillText('SOLAR MODULE TEMPERED GLASS & EVA ENCAPSULANT', 35, glassY + 22);
 
-    // Ribbon Structure
-    if (mode === 'flat') {
-      ctx.fillStyle = '#94a3b8';
-      ctx.fillRect(startX, centerY - 12, ribWidth, 12);
-      ctx.strokeStyle = '#cbd5e1';
-      ctx.lineWidth = 2;
-      ctx.strokeRect(startX, centerY - 12, ribWidth, 12);
-    } else {
-      ctx.fillStyle = '#d97706';
-      ctx.fillRect(startX, centerY - 12, ribWidth, 12);
+    // 3. 3D Interconnect Ribbon Body
+    const ribH = 22;
+    const ribY = centerY - ribH;
 
-      ctx.fillStyle = '#f59e0b';
-      ctx.beginPath();
-      const grooveCount = 10;
-      const step = ribWidth / grooveCount;
-      for (let i = 0; i < grooveCount; i++) {
-        const gx = startX + i * step;
-        ctx.moveTo(gx, centerY - 4);
-        ctx.lineTo(gx + step / 2, centerY - 16);
-        ctx.lineTo(gx + step, centerY - 4);
+    if (mode === 'reflective') {
+      // 3D Gold Metallic Base
+      const ribGrad = ctx.createLinearGradient(startX, ribY, startX + ribWidth, ribY);
+      ribGrad.addColorStop(0, '#b45309');
+      ribGrad.addColorStop(0.5, '#f59e0b');
+      ribGrad.addColorStop(1, '#b45309');
+      ctx.fillStyle = ribGrad;
+      ctx.fillRect(startX, ribY, ribWidth, ribH);
+
+      // 3D Grooved Prisms
+      const numPrisms = 16;
+      const prismW = ribWidth / numPrisms;
+      for (let i = 0; i < numPrisms; i++) {
+        const px = startX + i * prismW;
+        
+        // Left Facet (Light Gold)
+        ctx.fillStyle = '#fde047';
+        ctx.beginPath();
+        ctx.moveTo(px, ribY);
+        ctx.lineTo(px + prismW / 2, ribY - 10);
+        ctx.lineTo(px + prismW / 2, ribY);
+        ctx.closePath();
+        ctx.fill();
+
+        // Right Facet (Dark Gold Shadow)
+        ctx.fillStyle = '#d97706';
+        ctx.beginPath();
+        ctx.moveTo(px + prismW / 2, ribY - 10);
+        ctx.lineTo(px + prismW, ribY);
+        ctx.lineTo(px + prismW / 2, ribY);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.strokeStyle = '#78350f';
+        ctx.lineWidth = 1;
+        ctx.stroke();
       }
-      ctx.closePath();
-      ctx.fill();
+    } else {
+      // Smooth Flat Copper Ribbon
+      const flatGrad = ctx.createLinearGradient(startX, ribY, startX, ribY + ribH);
+      flatGrad.addColorStop(0, '#f97316');
+      flatGrad.addColorStop(0.5, '#ea580c');
+      flatGrad.addColorStop(1, '#9a3412');
+      ctx.fillStyle = flatGrad;
+      ctx.fillRect(startX, ribY, ribWidth, ribH);
+      ctx.strokeStyle = '#c2410c';
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(startX, ribY, ribWidth, ribH);
     }
 
-    // Incident Rays
-    rayOffset = (rayOffset + 1) % 40;
+    // 4. Sun & Dynamic Laser Photons
     const rad = (sunAngle * Math.PI) / 180;
+    const rayDist = 240;
+    const sunX = Math.min(width - 60, Math.max(60, width / 2 + Math.cos(rad) * rayDist));
+    const sunY = Math.min(glassY - 35, Math.max(40, glassY - Math.sin(rad) * 100));
 
-    const sunX = width / 2 + Math.cos(rad) * 220;
-    const sunY = centerY - 200 - Math.sin(rad) * 50;
-
-    ctx.fillStyle = '#f59e0b';
-    ctx.shadowBlur = 20;
-    ctx.shadowColor = '#f59e0b';
+    // Multi-Layer Outer Sun Aura
+    const sunAura = ctx.createRadialGradient(sunX, sunY, 5, sunX, sunY, 45);
+    sunAura.addColorStop(0, 'rgba(253, 224, 71, 1)');
+    sunAura.addColorStop(0.4, 'rgba(245, 158, 11, 0.45)');
+    sunAura.addColorStop(1, 'rgba(245, 158, 11, 0)');
+    ctx.fillStyle = sunAura;
     ctx.beginPath();
-    ctx.arc(sunX, sunY, 16, 0, Math.PI * 2);
+    ctx.arc(sunX, sunY, 45, 0, Math.PI * 2);
     ctx.fill();
 
-    const rayTargets = [startX + 30, startX + 80, startX + 130];
-    rayTargets.forEach(tx => {
-      ctx.strokeStyle = 'rgba(251, 191, 36, 0.85)';
-      ctx.lineWidth = 2.5;
-      ctx.setLineDash([8, 6]);
-      ctx.lineDashOffset = -rayOffset;
+    // Solid Sun Core
+    ctx.fillStyle = '#fff';
+    ctx.beginPath();
+    ctx.arc(sunX, sunY, 14, 0, Math.PI * 2);
+    ctx.fill();
 
+    // Incident Sunlight Beams & Animated Photon Pulses
+    const numBeams = 9;
+    for (let i = 0; i < numBeams; i++) {
+      const offset = (i - (numBeams - 1) / 2) * (ribWidth / (numBeams + 1));
+      const hitX = width / 2 + offset;
+      const hitY = mode === 'reflective' ? ribY - 5 : ribY;
+
+      // Incident Sunlight Ray (Golden Laser Line)
+      ctx.strokeStyle = 'rgba(253, 224, 71, 0.85)';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([6, 4]);
+      ctx.lineDashOffset = -photonOffset;
       ctx.beginPath();
       ctx.moveTo(sunX, sunY);
-      ctx.lineTo(tx, centerY - 12);
+      ctx.lineTo(hitX, hitY);
       ctx.stroke();
+
+      // Photons Traveling Downwards
       ctx.setLineDash([]);
+      const pct = (photonOffset / 30 + i * 0.12) % 1;
+      const px = sunX + (hitX - sunX) * pct;
+      const py = sunY + (hitY - sunY) * pct;
 
-      if (mode === 'flat') {
-        const rx = tx - (sunX - tx);
-        const ry = sunY;
+      ctx.fillStyle = '#fde047';
+      ctx.beginPath();
+      ctx.arc(px, py, 3.5, 0, Math.PI * 2);
+      ctx.fill();
 
-        ctx.strokeStyle = '#ef4444';
-        ctx.lineWidth = 2;
+      // Refracted / Reflected Ray Behavior
+      if (mode === 'reflective') {
+        // Redirection downward into Silicon Substrate (Green Laser)
+        ctx.strokeStyle = 'rgba(16, 185, 129, 0.9)';
+        ctx.lineWidth = 2.5;
+
+        const dir = hitX < width / 2 ? -1 : 1;
+        const subX = Math.max(30, Math.min(width - 30, hitX + dir * 110));
+        const subTargetY = subY + 12;
+
         ctx.beginPath();
-        ctx.moveTo(tx, centerY - 12);
-        ctx.lineTo(rx, ry);
+        ctx.moveTo(hitX, hitY);
+        ctx.lineTo(subX, subTargetY);
+        ctx.stroke();
+
+        // Energy Absorption Pulse Ring on Silicon Surface
+        ctx.fillStyle = '#10b981';
+        ctx.beginPath();
+        ctx.arc(subX, subTargetY, 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.strokeStyle = 'rgba(16, 185, 129, 0.4)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.arc(subX, subTargetY, 8, 0, Math.PI * 2);
         ctx.stroke();
       } else {
-        const rx1 = tx - 45;
-        const ry1 = centerY;
+        // Wasted Reflection upward into Sky/Glass (Red Warning Ray)
+        ctx.strokeStyle = 'rgba(239, 68, 68, 0.85)';
+        ctx.lineWidth = 2;
 
-        ctx.strokeStyle = '#10b981';
-        ctx.lineWidth = 3;
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = '#10b981';
-
-        ctx.beginPath();
-        ctx.moveTo(tx, centerY - 12);
-        ctx.lineTo(rx1, ry1);
-        ctx.stroke();
+        const escapeX = hitX + (hitX - sunX) * 0.85;
+        const escapeY = glassY - 50;
 
         ctx.beginPath();
-        ctx.moveTo(rx1, ry1);
-        ctx.lineTo(rx1 - 30, centerY - 140);
-        ctx.lineTo(rx1 - 60, ry1);
+        ctx.moveTo(hitX, hitY);
+        ctx.lineTo(escapeX, escapeY);
         ctx.stroke();
+
+        ctx.fillStyle = '#ef4444';
+        ctx.beginPath();
+        ctx.arc(escapeX, escapeY, 3, 0, Math.PI * 2);
+        ctx.fill();
       }
-    });
+    }
 
     requestAnimationFrame(renderRefraction);
   }
@@ -255,7 +353,7 @@ function initRefractionSimulator() {
 }
 
 /* ==========================================================================
-   4. Manufacturing Machine Simulator
+   4. Manufacturing Process Simulation
    ========================================================================== */
 function initMfgSimulator() {
   const canvas = document.getElementById('mfg-sim-canvas');
@@ -270,165 +368,55 @@ function initMfgSimulator() {
     height = canvas.height = canvas.offsetHeight;
   });
 
-  let wireX = 0;
+  let wireProgress = 0;
 
-  function renderMfgSim() {
+  function renderMfg() {
     ctx.clearRect(0, 0, width, height);
 
-    wireX = (wireX + 2) % width;
+    const lineY = height / 2;
+    wireProgress = (wireProgress + 2) % width;
 
-    // Station 1: Copper Ingot Spool
-    ctx.fillStyle = '#ea580c';
-    ctx.beginPath();
-    ctx.arc(80, height / 2, 35, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Station 2: Diamond Drawing Die Box
-    ctx.fillStyle = '#1e293b';
-    ctx.fillRect(220, height / 2 - 40, 60, 80);
-    ctx.strokeStyle = '#f59e0b';
-    ctx.strokeRect(220, height / 2 - 40, 60, 80);
-
-    // Station 3: Induction Annealing Heating Tube
-    ctx.fillStyle = '#991b1b';
-    ctx.shadowBlur = 25;
-    ctx.shadowColor = '#ef4444';
-    ctx.fillRect(360, height / 2 - 25, 100, 50);
-    ctx.shadowBlur = 0;
-
-    // Station 4: Hot-Dip Tin Bath
-    ctx.fillStyle = '#0284c7';
-    ctx.fillRect(520, height / 2 + 10, 110, 40);
-
-    // Station 5: Spool Reel
-    ctx.fillStyle = '#334155';
-    ctx.beginPath();
-    ctx.arc(750, height / 2, 40, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Continuous Wire Line
-    ctx.strokeStyle = '#f59e0b';
+    // Cable Line
+    ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
     ctx.lineWidth = 4;
     ctx.beginPath();
-    ctx.moveTo(80, height / 2);
-    ctx.lineTo(width - 50, height / 2);
+    ctx.moveTo(0, lineY);
+    ctx.lineTo(width, lineY);
     ctx.stroke();
 
-    for (let x = wireX; x < width - 50; x += 120) {
-      ctx.fillStyle = '#fef08a';
-      ctx.shadowBlur = 10;
-      ctx.shadowColor = '#f59e0b';
+    // Moving Particles
+    ctx.fillStyle = '#f59e0b';
+    for (let x = wireProgress; x < width; x += 120) {
       ctx.beginPath();
-      ctx.arc(x, height / 2, 4, 0, Math.PI * 2);
+      ctx.arc(x, lineY, 6, 0, Math.PI * 2);
       ctx.fill();
     }
 
-    requestAnimationFrame(renderMfgSim);
+    requestAnimationFrame(renderMfg);
   }
 
-  renderMfgSim();
+  renderMfg();
 }
 
 /* ==========================================================================
-   5. Products Filter & Tech Spec Modal Data
+   5. Product Filter & Spec Modal
    ========================================================================== */
-const productData = {
-  'pv-ribbon': {
-    title: 'PV RIBBON',
-    tagline: 'High yield strength, ultra-low resistance solar cell interconnects',
-    desc: 'Sumati PV Ribbon is engineered for optimal soldering performance and thermal stability. Produced from 99.99% ETP Grade Copper with uniform hot-dip tin plating, ensuring maximum module efficiency and long-term durability under harsh environmental stress.',
-    image: 'assets/images/pv_ribbon_product.jpg',
-    specs: [
-      { label: 'Base Material', value: 'ETP / OFC Copper (99.99% Purity)' },
-      { label: 'Ribbon Width', value: '0.90 mm – 8.00 mm (Tolerance ±0.03mm)' },
-      { label: 'Ribbon Thickness', value: '0.08 mm – 0.50 mm (Tolerance ±0.005mm)' },
-      { label: 'Yield Strength ($R_{p0.2}$)', value: '< 80 MPa (Ultra-soft option available)' },
-      { label: 'Elongation at Break', value: '≥ 25%' },
-      { label: 'Coating Options', value: 'Sn60Pb40, Lead-Free Sn96.5Ag3.0Cu0.5, Low Temp Sn42Bi58' },
-      { label: 'Coating Thickness', value: '10 µm – 30 µm per side' }
-    ]
-  },
-  'reflective-busbar': {
-    title: 'REFLECTIVE PV BUSBAR',
-    tagline: 'Patented micro-grooved surface boosting module output by up to 1.5%',
-    desc: 'Featuring a specialized engineered triangular or grooved surface texture, Reflective PV Busbar redirects incident sunlight back onto the active solar cell surface via total internal reflection inside the module glass, reducing optical shading losses dramatically.',
-    image: 'assets/images/reflective_busbar_product.jpg',
-    specs: [
-      { label: 'Surface Texture', value: 'Micro-Grooved Triangular Prism Profile' },
-      { label: 'Reflectivity Gain', value: '+1.2% to +1.8% Power Output Boost' },
-      { label: 'Ribbon Width', value: '1.20 mm – 6.00 mm' },
-      { label: 'Ribbon Thickness', value: '0.15 mm – 0.40 mm' },
-      { label: 'Copper Purity', value: 'High Conductivity ETP Copper' },
-      { label: 'Coating Type', value: 'Ultra-Shiny Lead-Free SnAgCu Alloy' },
-      { label: 'Compatibility', value: 'Standard Laminators & Automatic Stringers' }
-    ]
-  },
-  'multi-busbar': {
-    title: 'MULTI BUSBAR PV WIRE',
-    tagline: 'Precision micro-wires (0.25mm - 0.40mm) for 9BB to 16BB & SMBB modules',
-    desc: 'Designed for high-density 9BB, 10BB, 12BB, and SMBB solar cell interconnects. Our Multi-Busbar PV Wire reduces silver paste consumption on cell busbars while lowering internal series resistance and minimizing micro-crack shading.',
-    image: 'assets/images/multi_busbar_wire.jpg',
-    specs: [
-      { label: 'Wire Diameter', value: '0.22 mm – 0.40 mm (Tolerance ±0.003mm)' },
-      { label: 'Yield Stress', value: '65 – 85 MPa' },
-      { label: 'Roundness Deviation', value: '< 0.002 mm' },
-      { label: 'Plating Uniformity', value: '5 µm – 15 µm Concentric Tin Layer' },
-      { label: 'Solderability', value: '< 1.5 seconds Zero-Cross Time' },
-      { label: 'Spool Packaging', value: 'DIN160, DIN200, K250 Plastic Reels' }
-    ]
-  },
-  'pv-wire': {
-    title: 'PV WIRE',
-    tagline: 'High temperature resistant solar interconnect and string lead wire',
-    desc: 'Superior tinned copper wire designed for inter-string connections and high current lead-outs. Delivers exceptional corrosion resistance and flexibility for outdoor solar applications.',
-    image: 'assets/images/pv_ribbon_product.jpg',
-    specs: [
-      { label: 'Conductor Material', value: 'Class 5 Flexible Tinned Copper' },
-      { label: 'Operating Temp', value: '-40°C to +120°C' },
-      { label: 'Conductivity', value: '≥ 99.8% IACS' },
-      { label: 'Corrosion Resistance', value: 'Salt-mist tested over 1000 hours' }
-    ]
-  },
-  'pv-busbar': {
-    title: 'PV BUSBAR',
-    tagline: 'Heavy-duty tinned copper busbar for junction box connections & string leads',
-    desc: 'Engineered for high current carrying capacity across solar module strings and junction box leads. Uniform tin plating guarantees robust solder joints and minimal heat generation.',
-    image: 'assets/images/reflective_busbar_product.jpg',
-    specs: [
-      { label: 'Dimensions', value: 'Width 4.0mm – 12.0mm, Thickness 0.2mm – 0.8mm' },
-      { label: 'Max Current Capacity', value: 'Up to 35 Amperes' },
-      { label: 'Tin Layer', value: '15 µm – 40 µm' },
-      { label: 'Edge Finish', value: 'Smooth Rounded Burr-Free Edge' }
-    ]
-  },
-  'ultrathin-busbar': {
-    title: 'ULTRATHIN PV BUSBAR',
-    tagline: 'Ultra-thin interconnect ribbon for TOPCon, PERC & HJT cell technologies',
-    desc: 'Specially developed for ultra-thin glass-glass solar panels and advanced TOPCon/HJT cell architectures. Reduces mechanical stress on wafer substrates to practically zero.',
-    image: 'assets/images/multi_busbar_wire.jpg',
-    specs: [
-      { label: 'Thickness Range', value: '0.06 mm – 0.095 mm (60µm – 95µm)' },
-      { label: 'Wafer Stress Relief', value: '98% Micro-crack Reduction' },
-      { label: 'Elongation', value: '≥ 30%' },
-      { label: 'Special Coating', value: 'Low Melting Point Lead-Free Alloy' }
-    ]
-  }
-};
-
 function initProductFilter() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const productCards = document.querySelectorAll('.product-card');
+  const filterBtns = document.querySelectorAll('.products-filter-bar .filter-btn');
+  const cards = document.querySelectorAll('.product-card');
+
+  if (!filterBtns.length) return;
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const filterValue = btn.getAttribute('data-filter');
+      const filter = btn.getAttribute('data-filter');
 
-      productCards.forEach(card => {
+      cards.forEach(card => {
         const category = card.getAttribute('data-category');
-        if (filterValue === 'all' || category === filterValue) {
+        if (filter === 'all' || category === filter) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
@@ -441,28 +429,113 @@ function initProductFilter() {
 function initProductModal() {
   const modalOverlay = document.getElementById('product-modal');
   const closeBtn = document.getElementById('modal-close-btn');
-  const viewBtns = document.querySelectorAll('.btn-view-spec');
 
   if (!modalOverlay || !closeBtn) return;
 
-  viewBtns.forEach(btn => {
+  const specData = {
+    'pv-ribbon': {
+      title: 'PV RIBBON (INTERCONNECT)',
+      tagline: '99.99% ETP Copper Interconnect for Solar Modules',
+      desc: 'Our Interconnect PV Ribbon is manufactured using high-purity ETP copper rod with continuous hot-dip tinning, offering ultra-soft yield strength to eliminate cell micro-cracking.',
+      img: 'assets/images/pv_ribbon_product.jpg',
+      specs: [
+        ['Base Metal', 'ETP Copper (TU1) ≥ 99.99%'],
+        ['Width Range', '0.90 mm – 8.00 mm (± 0.05 mm)'],
+        ['Thickness Range', '0.08 mm – 0.50 mm (± 0.005 mm)'],
+        ['Yield Strength', '< 80 MPa'],
+        ['Elongation', '≥ 25%'],
+        ['Solder Layer', 'Sn60Pb40 / Sn96.5Ag3.0Cu0.5 (Lead-Free)'],
+        ['Coating Thickness', '10 µm – 30 µm per side']
+      ]
+    },
+    'reflective-busbar': {
+      title: 'REFLECTIVE PV BUSBAR',
+      tagline: 'Prismatic Light-Redirecting Surface Technology',
+      desc: 'Featuring precision micro-grooved triangular prisms that reflect incident sunlight back onto the module cover glass for total internal reflection into active silicon wafer area.',
+      img: 'assets/images/reflective_busbar_product.jpg',
+      specs: [
+        ['Power Output Gain', '+ 1.2% to + 1.8%'],
+        ['Prism Angle', '120° Precision Optical Prism'],
+        ['Base Material', 'High-Conductivity Tinned Copper'],
+        ['Width Specs', '1.20 mm – 3.00 mm'],
+        ['Thickness Specs', '0.15 mm – 0.30 mm'],
+        ['Solder Compatibility', 'Standard Automated Tabber-Stringers'],
+        ['Certifications', 'ISO 9001, RoHS, REACH']
+      ]
+    },
+    'multi-busbar': {
+      title: 'MULTI-BUSBAR (MBB) WIRE',
+      tagline: 'Micro Round Tinned Wire for 9BB - 16BB Modules',
+      desc: 'Designed for next-generation MBB solar module architectures, our micro round tinned copper wire reduces shading loss while boosting current collection efficiency.',
+      img: 'assets/images/multi_busbar_wire.jpg',
+      specs: [
+        ['Wire Diameter', '0.22 mm – 0.40 mm (± 0.003 mm)'],
+        ['Roundness Tolerance', '< 0.002 mm'],
+        ['Conductivity', '≥ 99.8% IACS'],
+        ['Yield Strength', '< 90 MPa'],
+        ['Coating Alloy', 'Sn-Pb, Sn-Ag-Cu Lead-Free'],
+        ['Packaging', 'DIN160 / DIN200 Reel Spools'],
+        ['Application', 'TOPCon, PERC, HJT 9BB-16BB Modules']
+      ]
+    },
+    'pv-wire': {
+      title: 'TINNED COPPER PV WIRE',
+      tagline: 'Flexible High-Current Solar Interconnect Lead Wire',
+      desc: 'Engineered for inter-string jumpers and junction box connection leads, providing maximum weather resistance and current carrying capacity.',
+      img: 'assets/images/pv_ribbon_product.jpg',
+      specs: [
+        ['Conductor', 'Flexible Tinned Stranded/Flat Copper'],
+        ['Temperature Rating', '-40°C to +120°C'],
+        ['Corrosion Resistance', 'Salt Mist & Acid Resistant'],
+        ['Solderability', 'Zero-Cross Time < 1.0 sec'],
+        ['Voltage Grade', '1000V / 1500V DC Compatible']
+      ]
+    },
+    'pv-busbar': {
+      title: 'PRECISION PV BUSBAR',
+      tagline: 'Zero-Burr Tinned Copper Busbar for Solar Arrays',
+      desc: 'Heavy-duty tinned copper busbar for string connections, featuring ultra-flat surface parallelism and zero burr edges.',
+      img: 'assets/images/reflective_busbar_product.jpg',
+      specs: [
+        ['Width Range', '4.0 mm – 12.0 mm'],
+        ['Thickness', '0.20 mm – 0.50 mm'],
+        ['Max Current Rating', 'Up to 35 A'],
+        ['Edge Quality', '100% Burr-Free Precision Slit'],
+        ['Tin Coating', 'Continuous Hot-Dip Plated']
+      ]
+    },
+    'ultrathin-busbar': {
+      title: 'ULTRATHIN PV BUSBAR',
+      tagline: 'Sub-100 Micron Ribbon for TOPCon & HJT Modules',
+      desc: 'Specially engineered ultra-thin tinned ribbon (<100µm) designed for delicate glass-glass TOPCon and Heterojunction (HJT) module architectures.',
+      img: 'assets/images/multi_busbar_wire.jpg',
+      specs: [
+        ['Ribbon Thickness', '60 µm – 95 µm (± 0.003 mm)'],
+        ['Mechanical Cell Stress', '98% Reduction vs Standard Ribbon'],
+        ['Yield Stress', '< 75 MPa Ultra-Soft'],
+        ['Cell Compatibility', 'N-Type TOPCon, HJT, PERC']
+      ]
+    }
+  };
+
+  document.querySelectorAll('.btn-view-spec').forEach(btn => {
     btn.addEventListener('click', () => {
-      const prodKey = btn.getAttribute('data-product');
-      const data = productData[prodKey];
+      const productKey = btn.getAttribute('data-product');
+      const data = specData[productKey];
 
       if (data) {
         document.getElementById('modal-title').textContent = data.title;
         document.getElementById('modal-tagline').textContent = data.tagline;
         document.getElementById('modal-desc').textContent = data.desc;
-        document.getElementById('modal-img').src = data.image;
+        document.getElementById('modal-img').src = data.img;
 
-        const specTableBody = document.getElementById('modal-spec-tbody');
-        specTableBody.innerHTML = '';
+        const tbody = document.getElementById('modal-spec-tbody');
+        tbody.innerHTML = '';
 
-        data.specs.forEach(s => {
-          const tr = document.createElement('tr');
-          tr.innerHTML = `<td><strong>${s.label}</strong></td><td>${s.value}</td>`;
-          specTableBody.appendChild(tr);
+        data.specs.forEach(([param, detail]) => {
+          const row = document.createElement('tr');
+          row.innerHTML = `<td><strong>${param}</strong></td><td>${detail}</td>`;
+          tbody.appendChild(row);
         });
 
         modalOverlay.classList.add('active');
@@ -482,7 +555,140 @@ function initProductModal() {
 }
 
 /* ==========================================================================
-   6. Ribbon Resistance Calculator
+   6. Ultra-Premium Interactive Media Gallery & Lightbox Modal
+   ========================================================================== */
+function initGalleryLightbox() {
+  const galleryGrid = document.getElementById('gallery-grid');
+  const lightbox = document.getElementById('gallery-lightbox');
+  const mediaWrapper = document.getElementById('lightbox-media-wrapper');
+  const titleElem = document.getElementById('lightbox-title');
+  const descElem = document.getElementById('lightbox-desc');
+  const counterElem = document.getElementById('lightbox-counter');
+
+  const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+  const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+
+  if (!galleryGrid || !lightbox) return;
+
+  const galleryCards = Array.from(galleryGrid.querySelectorAll('.gallery-card'));
+  let activeCards = [...galleryCards];
+  let currentIndex = 0;
+
+  // Category Filtering
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+      activeCards = [];
+
+      galleryCards.forEach(card => {
+        const categories = card.getAttribute('data-category') || '';
+        if (filter === 'all' || categories.includes(filter)) {
+          card.style.display = 'block';
+          activeCards.push(card);
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Open Lightbox on Click
+  galleryCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const indexInActive = activeCards.indexOf(card);
+      currentIndex = indexInActive >= 0 ? indexInActive : 0;
+      openLightbox(currentIndex);
+    });
+  });
+
+  function openLightbox(index) {
+    if (activeCards.length === 0) return;
+
+    const currentCard = activeCards[index];
+    const type = currentCard.getAttribute('data-type');
+    const src = currentCard.getAttribute('data-src');
+    const title = currentCard.getAttribute('data-title');
+    const desc = currentCard.getAttribute('data-desc');
+
+    mediaWrapper.innerHTML = '';
+
+    if (type === 'video') {
+      const video = document.createElement('video');
+      video.src = src;
+      video.autoplay = true;
+      video.loop = true;
+      video.controls = true;
+      video.playsInline = true;
+      video.style.width = '100%';
+      video.style.height = '100%';
+      video.style.objectFit = 'contain';
+      mediaWrapper.appendChild(video);
+    } else {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = title;
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectFit = 'contain';
+      mediaWrapper.appendChild(img);
+    }
+
+    if (titleElem) titleElem.textContent = title || '';
+    if (descElem) descElem.textContent = desc || '';
+    if (counterElem) counterElem.textContent = `${index + 1} / ${activeCards.length}`;
+
+    lightbox.classList.add('active');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    mediaWrapper.innerHTML = '';
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + activeCards.length) % activeCards.length;
+      openLightbox(currentIndex);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % activeCards.length;
+      openLightbox(currentIndex);
+    });
+  }
+
+  // Keyboard Arrow Navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') {
+      currentIndex = (currentIndex - 1 + activeCards.length) % activeCards.length;
+      openLightbox(currentIndex);
+    }
+    if (e.key === 'ArrowRight') {
+      currentIndex = (currentIndex + 1) % activeCards.length;
+      openLightbox(currentIndex);
+    }
+  });
+}
+
+/* ==========================================================================
+   7. Ribbon Resistance Calculator
    ========================================================================== */
 function initRibbonCalculator() {
   const widthInput = document.getElementById('calc-width');
@@ -531,7 +737,7 @@ function initRibbonCalculator() {
 }
 
 /* ==========================================================================
-   7. RFQ Form
+   8. RFQ Form
    ========================================================================== */
 function initRFQForm() {
   const rfqForm = document.getElementById('rfq-form');
@@ -542,7 +748,7 @@ function initRFQForm() {
 
   rfqForm.addEventListener('submit', (e) => {
     e.preventDefault();
-
+    
     const name = document.getElementById('rfq-name').value;
     const product = document.getElementById('rfq-product').value;
 
@@ -563,7 +769,7 @@ function initRFQForm() {
 }
 
 /* ==========================================================================
-   8. Animated Stat Counters
+   9. Animated Stat Counters
    ========================================================================== */
 function initStatCounters() {
   const statNumbers = document.querySelectorAll('.stat-number');
@@ -571,7 +777,7 @@ function initStatCounters() {
 
   function checkScroll() {
     if (animated) return;
-
+    
     const triggerPos = window.innerHeight * 0.85;
     statNumbers.forEach(stat => {
       const top = stat.getBoundingClientRect().top;
@@ -602,18 +808,4 @@ function initStatCounters() {
 
   window.addEventListener('scroll', checkScroll);
   checkScroll();
-}
-const timer = setInterval(() => {
-  current += step;
-  if (current >= target) {
-    element.textContent = prefix + target + suffix;
-    clearInterval(timer);
-  } else {
-    element.textContent = prefix + Math.floor(current) + suffix;
-  }
-}, 30);
-  }
-
-window.addEventListener('scroll', checkScroll);
-checkScroll();
 }

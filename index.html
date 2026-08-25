@@ -38,7 +38,7 @@
   <!-- Header Navigation -->
   <header class="header">
     <div class="container nav-wrapper">
-      <a href="#home" class="brand-logo">
+      <a href="index.html#home" class="brand-logo">
         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="50" cy="50" r="45" stroke="#F59E0B" stroke-width="6" />
           <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="#F59E0B" stroke-width="4"
@@ -50,51 +50,49 @@
 
       <nav class="nav-menu" id="nav-menu">
         <div class="nav-item">
-          <a href="#home" class="nav-link active">Home</a>
+          <a href="index.html#home" class="nav-link active">Home</a>
         </div>
 
         <div class="nav-item">
-          <a href="#about" class="nav-link">About <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i></a>
-          <div class="dropdown-menu">
-            <a href="#about" class="dropdown-item">Our Company</a>
-            <a href="#manufacturing" class="dropdown-item">Our Manufacturing</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <a href="#products" class="nav-link">Products <i class="fas fa-chevron-down"
+          <a href="our-company.html" class="nav-link">About <i class="fas fa-chevron-down"
               style="font-size: 0.75rem;"></i></a>
           <div class="dropdown-menu">
-            <a href="#products" class="dropdown-item">PV Ribbon</a>
-            <a href="#products" class="dropdown-item">Reflective PV Busbar</a>
-            <a href="#products" class="dropdown-item">Multi-Busbar (MBB) Wire</a>
-            <a href="#products" class="dropdown-item">PV Wire</a>
-            <a href="#products" class="dropdown-item">PV Busbar</a>
-            <a href="#products" class="dropdown-item">Ultrathin PV Busbar</a>
+            <a href="our-company.html" class="dropdown-item">Our Company</a>
+            <a href="our-manufacturing.html" class="dropdown-item">Our Manufacturing</a>
+            <a href="our-company.html#milestones" class="dropdown-item">Company Milestones</a>
           </div>
         </div>
 
         <div class="nav-item">
-          <a href="#3d-demo" class="nav-link">3D Solar Tech</a>
-        </div>
-
-        <div class="nav-item">
-          <a href="#calculator" class="nav-link">Ribbon Calculator</a>
-        </div>
-
-        <div class="nav-item">
-          <a href="#discover" class="nav-link">Discover <i class="fas fa-chevron-down"
+          <a href="index.html#products" class="nav-link">Products <i class="fas fa-chevron-down"
               style="font-size: 0.75rem;"></i></a>
           <div class="dropdown-menu">
-            <a href="#gallery" class="dropdown-item">Media & Gallery</a>
-            <a href="#events" class="dropdown-item">Upcoming Events</a>
-            <a href="#milestones" class="dropdown-item">Milestones</a>
-            <a href="#career" class="dropdown-item">Career</a>
+            <a href="pv-ribbon.html" class="dropdown-item">PV Ribbon</a>
+            <a href="reflective-pv-busbar.html" class="dropdown-item">Reflective PV Busbar</a>
+            <a href="multi-busbar-pv-wire.html" class="dropdown-item">Multi-Busbar (MBB) Wire</a>
+            <a href="pv-wire.html" class="dropdown-item">PV Wire</a>
+            <a href="pv-busbar.html" class="dropdown-item">PV Busbar</a>
+            <a href="ultrathin-pv-busbar.html" class="dropdown-item">Ultrathin PV Busbar</a>
           </div>
         </div>
 
         <div class="nav-item">
-          <a href="#contact" class="nav-link">Contact</a>
+          <a href="index.html#3d-demo" class="nav-link">3D Solar Tech</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="gallery.html" class="nav-link">Discover <i class="fas fa-chevron-down"
+              style="font-size: 0.75rem;"></i></a>
+          <div class="dropdown-menu">
+            <a href="gallery.html" class="dropdown-item">Media & Gallery</a>
+            <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+            <a href="our-company.html" class="dropdown-item">Our Story</a>
+            <a href="career.html" class="dropdown-item">Career</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
         </div>
       </nav>
 
@@ -102,7 +100,7 @@
         <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Theme">
           <i class="fas fa-sun"></i>
         </button>
-        <a href="#contact" class="btn btn-primary">Get a Quote</a>
+        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
         <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Navigation">
           <i class="fas fa-bars"></i>
         </button>
@@ -189,7 +187,7 @@
     </div>
   </section>
 
-  <!-- About Section - Perfectly Equalized Left & Right Columns -->
+  <!-- About Us Section -->
   <section class="about section-padding" id="about">
     <div class="container">
       <div class="about-grid">
@@ -236,66 +234,16 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Interactive 3D Solar Light Refraction Simulator -->
-  <section class="refraction-section section-padding" id="3d-demo">
-    <div class="container">
-      <div class="text-center">
-        <span class="section-tag"><i class="fas fa-cube"></i> Technology Showcase</span>
-        <h2 class="section-title">Interactive 3D Solar Light <span class="text-gradient">Refraction Simulator</span>
-        </h2>
-        <p class="section-subtitle">Toggle between standard flat ribbon vs Sumati’s Reflective PV Busbar to see how
-          micro-grooved prisms redirect sunlight back into the active solar cell substrate!</p>
-      </div>
-
-      <div class="refraction-wrapper">
-        <div class="refraction-canvas-container">
-          <canvas id="refraction-canvas"></canvas>
-        </div>
-
-        <div class="refraction-controls">
-          <div>
-            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Simulate Light Path</h3>
-            <p id="refraction-status-text" style="font-size: 0.9rem; color: var(--text-muted);">
-              <strong style="color: var(--accent-green);">Sumati Reflective PV Busbar:</strong> Incident light strikes
-              3D triangular micro-grooves and redirects 100% into silicon wafer cell substrate (+1.52% power gain!).
-            </p>
-          </div>
-
-          <div>
-            <label
-              style="font-family: 'Outfit', sans-serif; font-weight: 600; margin-bottom: 0.4rem; display: block; font-size: 0.9rem;">Select
-              Interconnect Type</label>
-            <div class="control-switch-group">
-              <button class="switch-btn active" id="switch-reflective">Sumati Reflective Busbar</button>
-              <button class="switch-btn" id="switch-flat">Standard Flat Ribbon</button>
-            </div>
-          </div>
-
-          <div>
-            <label
-              style="font-family: 'Outfit', sans-serif; font-weight: 600; margin-bottom: 0.4rem; display: block; font-size: 0.9rem;">Sun
-              Incident Angle</label>
-            <input type="range" id="sun-angle-slider" min="15" max="165" value="45" class="calc-range">
-          </div>
-
-          <div
-            style="padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-md); border: 1px solid var(--border-light);">
-            <div style="font-size: 0.8rem; color: var(--text-subtle);">Module Output Boost</div>
-            <div
-              style="font-family: 'Outfit', sans-serif; font-size: 1.75rem; font-weight: 800; color: var(--accent-green);">
-              +1.52% Efficiency</div>
+          <div style="margin-top: 1.5rem;">
+            <a href="our-company.html" class="btn btn-outline">Read Full Company Story</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Products Showcase -->
+  <!-- Products Showcase (Official pvribbon.in Product Videos & 2-Line Minimal Cards) -->
   <section class="products section-padding" id="products">
     <div class="container">
       <div class="text-center">
@@ -314,22 +262,22 @@
         <button class="filter-btn" data-filter="ultrathin">Ultrathin Ribbon</button>
       </div>
 
-      <!-- Products Grid -->
+      <!-- Minimal Products Grid with Official Website Videos -->
       <div class="products-grid">
 
-        <!-- Product Card 1 -->
+        <!-- Product Card 1: PV RIBBON (Official Video: pv.mp4) -->
         <div class="product-card glass-card" data-category="pv-ribbon">
           <div class="product-thumb">
-            <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
-              <source src="assets/videos/pv_ribbon.mp4" type="video/mp4">
+            <video autoplay loop muted playsinline>
+              <source src="assets/videos/pv.mp4" type="video/mp4">
             </video>
             <span class="product-tag-badge">Flagship</span>
           </div>
           <div class="product-body">
             <div>
               <h3 class="product-title">PV RIBBON</h3>
-              <p class="product-desc">Manufactured from high-purity TU1 copper (99.99%), our Interconnect Ribbon
-                undergoes precision rolling and hot-dip tinning to minimize soldering temperature.</p>
+              <p class="product-desc">High-purity TU1 copper (99.99%) interconnect ribbon with hot-dip tinning for low
+                soldering temperature.</p>
             </div>
             <div class="product-specs-preview">
               <div class="spec-mini-item">
@@ -342,23 +290,26 @@
               </div>
             </div>
             <div class="product-card-footer">
-              <button class="btn btn-outline btn-view-spec" data-product="pv-ribbon">View Specs</button>
-              <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RFQ</a>
+              <a href="pv-ribbon.html" class="btn btn-outline"
+                style="padding: 0.5rem 0.85rem; font-size: 0.825rem;">Details Page</a>
+              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RFQ</a>
             </div>
           </div>
         </div>
 
-        <!-- Product Card 2 -->
+        <!-- Product Card 2: REFLECTIVE PV BUSBAR (Official Video: 1.mp4) -->
         <div class="product-card glass-card" data-category="reflective">
           <div class="product-thumb">
-            <img src="assets/images/reflective_busbar_product.jpg" alt="Reflective Light-Redirecting PV Busbar">
+            <video autoplay loop muted playsinline>
+              <source src="assets/videos/1.mp4" type="video/mp4">
+            </video>
             <span class="product-tag-badge">+1.5% Gain</span>
           </div>
           <div class="product-body">
             <div>
               <h3 class="product-title">REFLECTIVE PV BUSBAR</h3>
-              <p class="product-desc">Patented micro-grooved triangular prism ribbon that redirects light back onto
-                active solar cells via glass internal reflection.</p>
+              <p class="product-desc">Patented micro-grooved triangular prism ribbon redirecting sunlight into cell
+                substrate via total internal reflection.</p>
             </div>
             <div class="product-specs-preview">
               <div class="spec-mini-item">
@@ -371,23 +322,26 @@
               </div>
             </div>
             <div class="product-card-footer">
-              <button class="btn btn-outline btn-view-spec" data-product="reflective-busbar">View Specs</button>
-              <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RFQ</a>
+              <a href="reflective-pv-busbar.html" class="btn btn-outline"
+                style="padding: 0.5rem 0.85rem; font-size: 0.825rem;">Details Page</a>
+              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RFQ</a>
             </div>
           </div>
         </div>
 
-        <!-- Product Card 3 -->
+        <!-- Product Card 3: MULTI BUSBAR PV WIRE (Official Video: 2.mp4) -->
         <div class="product-card glass-card" data-category="mbb">
           <div class="product-thumb">
-            <img src="assets/images/multi_busbar_wire.jpg" alt="Multi-Busbar MBB PV Wire">
+            <video autoplay loop muted playsinline>
+              <source src="assets/videos/2.mp4" type="video/mp4">
+            </video>
             <span class="product-tag-badge">9BB - 16BB</span>
           </div>
           <div class="product-body">
             <div>
               <h3 class="product-title">MULTI BUSBAR PV WIRE</h3>
-              <p class="product-desc">Precision micro round tinned copper wire (0.22mm - 0.40mm) designed for
-                high-density multi-busbar solar cell interconnects.</p>
+              <p class="product-desc">Precision micro round tinned copper wire (0.22mm - 0.40mm) engineered for 9BB to
+                16BB solar modules.</p>
             </div>
             <div class="product-specs-preview">
               <div class="spec-mini-item">
@@ -400,23 +354,26 @@
               </div>
             </div>
             <div class="product-card-footer">
-              <button class="btn btn-outline btn-view-spec" data-product="multi-busbar">View Specs</button>
-              <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RFQ</a>
+              <a href="multi-busbar-pv-wire.html" class="btn btn-outline"
+                style="padding: 0.5rem 0.85rem; font-size: 0.825rem;">Details Page</a>
+              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RFQ</a>
             </div>
           </div>
         </div>
 
-        <!-- Product Card 4 -->
+        <!-- Product Card 4: PV WIRE (Official Video: 3.mp4) -->
         <div class="product-card glass-card" data-category="pv-ribbon">
           <div class="product-thumb">
-            <img src="assets/images/pv_ribbon_product.jpg" alt="Tinned Copper PV Wire">
+            <video autoplay loop muted playsinline>
+              <source src="assets/videos/3.mp4" type="video/mp4">
+            </video>
             <span class="product-tag-badge">Flexible</span>
           </div>
           <div class="product-body">
             <div>
               <h3 class="product-title">PV WIRE</h3>
-              <p class="product-desc">Heavy-duty tinned copper lead wire for inter-string connections and high current
-                carrying junction box lead-outs.</p>
+              <p class="product-desc">Heavy-duty flexible tinned copper lead wire for string connections and junction
+                box lead-outs.</p>
             </div>
             <div class="product-specs-preview">
               <div class="spec-mini-item">
@@ -429,23 +386,26 @@
               </div>
             </div>
             <div class="product-card-footer">
-              <button class="btn btn-outline btn-view-spec" data-product="pv-wire">View Specs</button>
-              <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RFQ</a>
+              <a href="pv-wire.html" class="btn btn-outline"
+                style="padding: 0.5rem 0.85rem; font-size: 0.825rem;">Details Page</a>
+              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RFQ</a>
             </div>
           </div>
         </div>
 
-        <!-- Product Card 5 -->
+        <!-- Product Card 5: PV BUSBAR (Official Video: 4.mp4) -->
         <div class="product-card glass-card" data-category="reflective">
           <div class="product-thumb">
-            <img src="assets/images/reflective_busbar_product.jpg" alt="Precision PV Busbar">
+            <video autoplay loop muted playsinline>
+              <source src="assets/videos/4.mp4" type="video/mp4">
+            </video>
             <span class="product-tag-badge">Heavy Duty</span>
           </div>
           <div class="product-body">
             <div>
               <h3 class="product-title">PV BUSBAR</h3>
-              <p class="product-desc">Tinned flat copper busbar for string connections, offering high current handling
-                capacity and zero burr edges.</p>
+              <p class="product-desc">Precision tinned flat copper busbar delivering high current carrying capacity with
+                zero burr edges.</p>
             </div>
             <div class="product-specs-preview">
               <div class="spec-mini-item">
@@ -458,23 +418,26 @@
               </div>
             </div>
             <div class="product-card-footer">
-              <button class="btn btn-outline btn-view-spec" data-product="pv-busbar">View Specs</button>
-              <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RFQ</a>
+              <a href="pv-busbar.html" class="btn btn-outline"
+                style="padding: 0.5rem 0.85rem; font-size: 0.825rem;">Details Page</a>
+              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RFQ</a>
             </div>
           </div>
         </div>
 
-        <!-- Product Card 6 -->
+        <!-- Product Card 6: ULTRATHIN PV BUSBAR (Official Video: 5.mp4) -->
         <div class="product-card glass-card" data-category="ultrathin">
           <div class="product-thumb">
-            <img src="assets/images/multi_busbar_wire.jpg" alt="Ultrathin PV Busbar">
+            <video autoplay loop muted playsinline>
+              <source src="assets/videos/5.mp4" type="video/mp4">
+            </video>
             <span class="product-tag-badge">TOPCon / HJT</span>
           </div>
           <div class="product-body">
             <div>
               <h3 class="product-title">ULTRATHIN PV BUSBAR</h3>
-              <p class="product-desc">Ultra-thin ribbon (&lt;100 microns) tailored for TOPCon, PERC, and HJT glass-glass
-                module architectures.</p>
+              <p class="product-desc">Ultra-thin ribbon (&lt;100µm) reducing cell mechanical stress by 98% for TOPCon
+                and HJT modules.</p>
             </div>
             <div class="product-specs-preview">
               <div class="spec-mini-item">
@@ -487,8 +450,9 @@
               </div>
             </div>
             <div class="product-card-footer">
-              <button class="btn btn-outline btn-view-spec" data-product="ultrathin-busbar">View Specs</button>
-              <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RFQ</a>
+              <a href="ultrathin-pv-busbar.html" class="btn btn-outline"
+                style="padding: 0.5rem 0.85rem; font-size: 0.825rem;">Details Page</a>
+              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RFQ</a>
             </div>
           </div>
         </div>
@@ -497,101 +461,58 @@
     </div>
   </section>
 
-  <!-- Solar Ribbon Calculator Section -->
-  <section class="calculator-section section-padding" id="calculator">
+  <!-- Interactive 3D Solar Light Refraction Simulator -->
+  <section class="refraction-section section-padding" id="3d-demo">
     <div class="container">
       <div class="text-center">
-        <span class="section-tag">Engineering Tool</span>
-        <h2 class="section-title">Solar Ribbon Resistance & <span class="text-gradient">Power Gain Calculator</span>
+        <span class="section-tag"><i class="fas fa-cube"></i> Optical Physics Simulator</span>
+        <h2 class="section-title">Interactive 3D Solar Light <span class="text-gradient">Refraction Simulator</span>
         </h2>
-        <p class="section-subtitle">Input custom ribbon dimensions to compute cross-sectional area, electrical
-          resistance ($\text{m}\Omega/\text{m}$), and module power savings.</p>
+        <p class="section-subtitle">Toggle between standard flat ribbon vs Sumati’s Reflective PV Busbar to see how
+          micro-grooved prisms redirect sunlight back into the active solar cell substrate!</p>
       </div>
 
-      <div class="calc-card-wrapper">
-        <!-- Calculator Inputs -->
-        <div>
-          <h3 style="font-size: 1.3rem; margin-bottom: 1.1rem;">Ribbon Dimensions</h3>
-
-          <div class="calc-form-group">
-            <div class="calc-label">
-              <span>Ribbon Width (mm)</span>
-              <span id="val-width" style="color: var(--accent-gold); font-weight: 700;">1.50 mm</span>
-            </div>
-            <input type="range" id="calc-width" min="0.80" max="6.00" step="0.05" value="1.50" class="calc-range">
-          </div>
-
-          <div class="calc-form-group">
-            <div class="calc-label">
-              <span>Ribbon Thickness (mm)</span>
-              <span id="val-thick" style="color: var(--accent-gold); font-weight: 700;">0.20 mm</span>
-            </div>
-            <input type="range" id="calc-thickness" min="0.06" max="0.50" step="0.01" value="0.20" class="calc-range">
-          </div>
-
-          <div class="calc-form-group">
-            <div class="calc-label">
-              <span>Interconnect String Length (m)</span>
-              <span id="val-length" style="color: var(--accent-gold); font-weight: 700;">1.2 m</span>
-            </div>
-            <input type="range" id="calc-length" min="0.5" max="3.0" step="0.1" value="1.2" class="calc-range">
-          </div>
-
-          <div class="calc-form-group">
-            <label class="calc-label">Solar Cell Busbars</label>
-            <select id="calc-busbars" class="calc-select">
-              <option value="9">9 Busbars (9BB)</option>
-              <option value="10" selected>10 Busbars (10BB)</option>
-              <option value="12">12 Busbars (12BB)</option>
-              <option value="16">16 Busbars (SMBB)</option>
-            </select>
-          </div>
+      <div class="refraction-wrapper">
+        <div class="refraction-canvas-container">
+          <span class="refraction-canvas-tag"><i class="fas fa-satellite-dish"></i> Live 3D Optical Beam
+            Simulation</span>
+          <canvas id="refraction-canvas"></canvas>
         </div>
 
-        <!-- Calculator Results -->
-        <div class="calc-results-card">
-          <div class="meter-wrapper">
-            <svg class="svg-meter" viewBox="0 0 100 100">
-              <circle class="meter-bg-circle" cx="50" cy="50" r="40"></circle>
-              <circle class="meter-val-circle" id="meter-circle" cx="50" cy="50" r="40"></circle>
-            </svg>
-            <div>
-              <h3 style="font-size: 1.2rem;">Live Efficiency Meter</h3>
-              <p style="font-size: 0.8rem; color: var(--text-muted);">Real-time resistance & module power calculation.
-              </p>
+        <div class="refraction-controls">
+          <div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.4rem;">Simulate Light Path</h3>
+            <p id="refraction-status-text" style="font-size: 0.875rem; color: var(--text-muted);">
+              <strong style="color: var(--accent-green);">Sumati Reflective PV Busbar:</strong> 120° micro-grooves
+              redirect 100% of incident light directly into silicon wafer substrate (+1.52% energy boost!).
+            </p>
+          </div>
+
+          <div>
+            <label
+              style="font-family: 'Outfit', sans-serif; font-weight: 600; margin-bottom: 0.35rem; display: block; font-size: 0.875rem;">Select
+              Interconnect Type</label>
+            <div class="control-switch-group">
+              <button class="switch-btn active" id="switch-reflective">Sumati Reflective Busbar</button>
+              <button class="switch-btn" id="switch-flat">Standard Flat Ribbon</button>
             </div>
           </div>
 
           <div>
-            <div class="result-row">
-              <div>
-                <div style="font-weight: 600;">Cross-Sectional Area</div>
-                <div style="font-size: 0.8rem; color: var(--text-muted);">Conductor area</div>
-              </div>
-              <div class="result-val" id="res-area">0.300 mm²</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+              <label style="font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.875rem;">Sun Incident
+                Angle</label>
+              <span id="sun-angle-val"
+                style="font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--accent-gold); font-size: 0.875rem;">45°</span>
             </div>
-
-            <div class="result-row">
-              <div>
-                <div style="font-weight: 600;">String Series Resistance</div>
-                <div style="font-size: 0.8rem; color: var(--text-muted);">$\text{m}\Omega$ per string</div>
-              </div>
-              <div class="result-val" id="res-resistance">6.89 mΩ</div>
-            </div>
-
-            <div class="result-row">
-              <div>
-                <div style="font-weight: 600;">Est. Module Power Boost</div>
-                <div style="font-size: 0.8rem; color: var(--text-muted);">Power gain output</div>
-              </div>
-              <div class="result-val" id="res-power-saved" style="color: var(--accent-green);">+1.45 W</div>
-            </div>
+            <input type="range" id="sun-angle-slider" min="15" max="165" value="45" class="calc-range">
           </div>
 
-          <div style="margin-top: 1rem; text-align: center;">
-            <a href="#contact" class="btn btn-primary" style="width: 100%;">
-              <i class="fas fa-file-invoice"></i> Request Spec Quote
-            </a>
+          <div class="metric-boost-card">
+            <div
+              style="font-size: 0.78rem; color: var(--text-subtle); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 0.15rem;">
+              Module Output Boost</div>
+            <div class="metric-boost-val" id="metric-boost-val">+1.52% Efficiency</div>
           </div>
         </div>
       </div>
@@ -608,116 +529,214 @@
           is monitored for zero defects.</p>
       </div>
 
-      <!-- WOW Feature: Manufacturing Machine Simulator -->
-      <div class="mfg-simulator-card">
-        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem; text-align: center;">
-          <i class="fas fa-microchip" style="color: var(--accent-gold);"></i> Real-Time Automated Production Machine
-          Simulation
-        </h3>
-        <div class="mfg-canvas-box">
-          <canvas id="mfg-sim-canvas"></canvas>
+      <!-- Minimalist Icon Box Grid -->
+      <div class="mfg-minimal-grid">
+
+        <!-- Step 1 Card -->
+        <div class="mfg-step-card">
+          <div class="mfg-step-header">
+            <div class="mfg-icon-box"><i class="fas fa-layer-group"></i></div>
+            <span class="mfg-step-num">01</span>
+          </div>
+          <div>
+            <h3 class="mfg-step-title">ETP Copper Selection</h3>
+            <p class="mfg-step-desc">99.99% Electrolytic Tough Pitch copper rod sourcing ensuring maximum electrical
+              conductivity.</p>
+          </div>
         </div>
+
+        <!-- Step 2 Card -->
+        <div class="mfg-step-card">
+          <div class="mfg-step-header">
+            <div class="mfg-icon-box"><i class="fas fa-compress-arrows-alt"></i></div>
+            <span class="mfg-step-num">02</span>
+          </div>
+          <div>
+            <h3 class="mfg-step-title">Micro Wire Drawing</h3>
+            <p class="mfg-step-desc">Multi-pass diamond die drawing for precise flat ribbon or round MBB wire sizing.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 Card -->
+        <div class="mfg-step-card">
+          <div class="mfg-step-header">
+            <div class="mfg-icon-box"><i class="fas fa-fire-alt"></i></div>
+            <span class="mfg-step-num">03</span>
+          </div>
+          <div>
+            <h3 class="mfg-step-title">Continuous Annealing</h3>
+            <p class="mfg-step-desc">In-line controlled gas atmosphere annealing achieving ultra-soft yield stress
+              (&lt;80 MPa).</p>
+          </div>
+        </div>
+
+        <!-- Step 4 Card -->
+        <div class="mfg-step-card">
+          <div class="mfg-step-header">
+            <div class="mfg-icon-box"><i class="fas fa-tint"></i></div>
+            <span class="mfg-step-num">04</span>
+          </div>
+          <div>
+            <h3 class="mfg-step-title">Hot-Dip Tin Plating</h3>
+            <p class="mfg-step-desc">Uniform continuous tin coating (Sn60Pb40, SnAgCu lead-free) with 10-30µm thickness
+              control.</p>
+          </div>
+        </div>
+
+        <!-- Step 5 Card -->
+        <div class="mfg-step-card">
+          <div class="mfg-step-header">
+            <div class="mfg-icon-box"><i class="fas fa-eye"></i></div>
+            <span class="mfg-step-num">05</span>
+          </div>
+          <div>
+            <h3 class="mfg-step-title">Laser Inspection</h3>
+            <p class="mfg-step-desc">Dual-axis laser micrometer monitoring for 100% real-time thickness & width
+              compliance.</p>
+          </div>
+        </div>
+
+        <!-- Step 6 Card -->
+        <div class="mfg-step-card">
+          <div class="mfg-step-header">
+            <div class="mfg-icon-box"><i class="fas fa-compact-disc"></i></div>
+            <span class="mfg-step-num">06</span>
+          </div>
+          <div>
+            <h3 class="mfg-step-title">Precision Spooling</h3>
+            <p class="mfg-step-desc">Tension-controlled spooling on DIN160/DIN200 reels with vacuum barrier foil
+              packaging.</p>
+          </div>
+        </div>
+
       </div>
 
-      <div class="process-timeline">
-        <div class="process-card glass-card">
-          <div class="process-step-num">01</div>
-          <h4 class="process-title">ETP Copper Selection</h4>
-          <p class="process-desc">99.99% Electrolytic Tough Pitch copper rod sourcing ensuring maximum electrical
-            conductivity.</p>
-        </div>
-
-        <div class="process-card glass-card">
-          <div class="process-step-num">02</div>
-          <h4 class="process-title">Micro Wire Drawing</h4>
-          <p class="process-desc">Multi-pass diamond die drawing for precise flat ribbon or round MBB wire sizing.</p>
-        </div>
-
-        <div class="process-card glass-card">
-          <div class="process-step-num">03</div>
-          <h4 class="process-title">Continuous Annealing</h4>
-          <p class="process-desc">In-line controlled gas atmosphere annealing achieving ultra-soft yield stress (&lt;80
-            MPa).</p>
-        </div>
-
-        <div class="process-card glass-card">
-          <div class="process-step-num">04</div>
-          <h4 class="process-title">Hot-Dip Tin Plating</h4>
-          <p class="process-desc">Uniform continuous tin coating (Sn60Pb40, SnAgCu lead-free) with 10-30µm thickness
-            control.</p>
-        </div>
-
-        <div class="process-card glass-card">
-          <div class="process-step-num">05</div>
-          <h4 class="process-title">Laser Inspection</h4>
-          <p class="process-desc">Dual-axis laser micrometer monitoring for 100% real-time thickness & width compliance.
-          </p>
-        </div>
-
-        <div class="process-card glass-card">
-          <div class="process-step-num">06</div>
-          <h4 class="process-title">Precision Spooling</h4>
-          <p class="process-desc">Tension-controlled spooling on DIN160/DIN200 reels with vacuum barrier foil packaging.
-          </p>
-        </div>
+      <div class="text-center" style="margin-top: 2rem;">
+        <a href="our-manufacturing.html" class="btn btn-outline">Explore Full Manufacturing Facility Page</a>
       </div>
     </div>
   </section>
 
-  <!-- Discover Section: Media Gallery, Upcoming Events & Career -->
+  <!-- Ultra-Premium Discover & Gallery Section -->
   <section class="section-padding" id="discover" style="background: var(--bg-secondary);">
     <div class="container">
 
       <!-- Media Gallery -->
       <div id="gallery" style="margin-bottom: 3.5rem;">
         <div class="text-center">
-          <span class="section-tag">Media Showcase</span>
+          <span class="section-tag"><i class="fas fa-photo-video"></i> Media Showcase</span>
           <h2 class="section-title">Plant & Product <span class="text-gradient">Gallery</span></h2>
           <p class="section-subtitle">Take a glimpse inside our state-of-the-art Partapur, Meerut manufacturing facility
-            and product line.</p>
+            and high-performance product line.</p>
         </div>
 
-        <div class="gallery-grid">
-          <div class="gallery-card glass-card">
+        <!-- Interactive Category Filter -->
+        <div class="gallery-filter-bar">
+          <button class="gallery-filter-btn active" data-filter="all">All Media</button>
+          <button class="gallery-filter-btn" data-filter="videos">Video Tours</button>
+          <button class="gallery-filter-btn" data-filter="facility">Plant Facility</button>
+          <button class="gallery-filter-btn" data-filter="products">Products</button>
+        </div>
+
+        <!-- Ultra-Premium Gallery Grid -->
+        <div class="gallery-grid" id="gallery-grid">
+
+          <!-- Item 1: Plant Video Tour -->
+          <div class="gallery-card glass-card" data-category="videos facility" data-type="video"
+            data-src="assets/videos/manufacturing_tour.mp4" data-title="Integrated Manufacturing Plant Facility"
+            data-desc="Automated wire drawing, annealing, and hot-dip tinning at Partapur, Meerut.">
             <video autoplay loop muted playsinline>
               <source src="assets/videos/manufacturing_tour.mp4" type="video/mp4">
             </video>
+            <span class="gallery-media-badge"><i class="fas fa-video"></i> HD Video</span>
             <div class="gallery-overlay">
-              <h4 style="color: #fff; font-size: 1rem;">Integrated Plant Facility</h4>
-              <p style="color: var(--text-muted); font-size: 0.8rem;">Partapur Industrial Estate, Meerut</p>
+              <div class="gallery-play-icon"><i class="fas fa-play"></i></div>
+              <h4 class="gallery-item-title">Integrated Plant Facility</h4>
+              <p class="gallery-item-desc">Partapur Industrial Estate, Meerut</p>
             </div>
           </div>
 
-          <div class="gallery-card glass-card">
+          <!-- Item 2: PV Ribbon Spool Video -->
+          <div class="gallery-card glass-card" data-category="videos products" data-type="video"
+            data-src="assets/videos/pv.mp4" data-title="Precision Tinned Copper Spool Array"
+            data-desc="DIN160 and DIN200 tension-controlled spools ready for packaging.">
             <video autoplay loop muted playsinline>
-              <source src="assets/videos/pv_ribbon.mp4" type="video/mp4">
+              <source src="assets/videos/pv.mp4" type="video/mp4">
             </video>
+            <span class="gallery-media-badge"><i class="fas fa-video"></i> HD Video</span>
             <div class="gallery-overlay">
-              <h4 style="color: #fff; font-size: 1rem;">Precision Spool Reel Array</h4>
-              <p style="color: var(--text-muted); font-size: 0.8rem;">DIN160 & DIN200 Reel Packaging</p>
+              <div class="gallery-play-icon"><i class="fas fa-play"></i></div>
+              <h4 class="gallery-item-title">Precision Spool Reel Array</h4>
+              <p class="gallery-item-desc">DIN160 & DIN200 Reel Packaging</p>
             </div>
           </div>
 
-          <div class="gallery-card glass-card">
+          <!-- Item 3: Reflective PV Busbar Texture -->
+          <div class="gallery-card glass-card" data-category="products" data-type="image"
+            data-src="assets/images/reflective_busbar_product.jpg" data-title="Micro-Grooved Prismatic Texture"
+            data-desc="Patented triangular micro-grooves redirecting light back to solar cell substrate.">
             <img src="assets/images/reflective_busbar_product.jpg" alt="Reflective PV Busbar Texture">
+            <span class="gallery-media-badge"><i class="fas fa-camera"></i> Photo</span>
             <div class="gallery-overlay">
-              <h4 style="color: #fff; font-size: 1rem;">Micro-Grooved Texture</h4>
-              <p style="color: var(--text-muted); font-size: 0.8rem;">Prismatic Light Refraction Surface</p>
+              <div class="gallery-play-icon"><i class="fas fa-search-plus"></i></div>
+              <h4 class="gallery-item-title">Micro-Grooved Texture</h4>
+              <p class="gallery-item-desc">Prismatic Light Refraction Surface</p>
             </div>
           </div>
 
-          <div class="gallery-card glass-card">
+          <!-- Item 4: Multi-Busbar Micro Wire -->
+          <div class="gallery-card glass-card" data-category="products" data-type="image"
+            data-src="assets/images/multi_busbar_wire.jpg" data-title="Multi-Busbar Micro Round Wire"
+            data-desc="0.22mm - 0.40mm ultra-fine tinned wire engineered for 9BB to 16BB modules.">
             <img src="assets/images/multi_busbar_wire.jpg" alt="Multi-Busbar MBB Wire">
+            <span class="gallery-media-badge"><i class="fas fa-camera"></i> Photo</span>
             <div class="gallery-overlay">
-              <h4 style="color: #fff; font-size: 1rem;">Multi-Busbar Micro Wire</h4>
-              <p style="color: var(--text-muted); font-size: 0.8rem;">0.22mm - 0.40mm Ultra-Fine Wire</p>
+              <div class="gallery-play-icon"><i class="fas fa-search-plus"></i></div>
+              <h4 class="gallery-item-title">Multi-Busbar Micro Wire</h4>
+              <p class="gallery-item-desc">0.22mm - 0.40mm Ultra-Fine Wire</p>
             </div>
           </div>
+
+          <!-- Item 5: Continuous Hot-Dip Tinning Video -->
+          <div class="gallery-card glass-card" data-category="videos facility" data-type="video"
+            data-src="assets/videos/1.mp4" data-title="Continuous Hot-Dip Tinning Process"
+            data-desc="10-30µm uniform solder coating application on high-purity ETP copper.">
+            <video autoplay loop muted playsinline>
+              <source src="assets/videos/1.mp4" type="video/mp4">
+            </video>
+            <span class="gallery-media-badge"><i class="fas fa-video"></i> HD Video</span>
+            <div class="gallery-overlay">
+              <div class="gallery-play-icon"><i class="fas fa-play"></i></div>
+              <h4 class="gallery-item-title">Continuous Hot-Dip Tinning</h4>
+              <p class="gallery-item-desc">10–30µm Uniform Solder Coating</p>
+            </div>
+          </div>
+
+          <!-- Item 6: Laser Optical Micrometer Inspection Video -->
+          <div class="gallery-card glass-card" data-category="videos facility" data-type="video"
+            data-src="assets/videos/2.mp4" data-title="Dual-Axis Laser Micrometer Quality Control"
+            data-desc="Real-time in-line dimension monitoring for ±0.005mm width and thickness tolerance.">
+            <video autoplay loop muted playsinline>
+              <source src="assets/videos/2.mp4" type="video/mp4">
+            </video>
+            <span class="gallery-media-badge"><i class="fas fa-video"></i> HD Video</span>
+            <div class="gallery-overlay">
+              <div class="gallery-play-icon"><i class="fas fa-play"></i></div>
+              <h4 class="gallery-item-title">Laser Optical Inspection</h4>
+              <p class="gallery-item-desc">Dual-Axis Micrometer Monitoring</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center" style="margin-top: 2rem;">
+          <a href="gallery.html" class="btn btn-outline">Open Dedicated Gallery Page</a>
         </div>
       </div>
 
       <!-- Upcoming Events -->
-      <div id="events" style="margin-bottom: 3.5rem;">
+      <div id="events">
         <div class="text-center">
           <span class="section-tag">Global Exhibitions</span>
           <h2 class="section-title">Upcoming <span class="text-gradient">Events & Expos</span></h2>
@@ -733,7 +752,7 @@
               <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">India Expo Centre, Greater
                 Noida, Delhi NCR • Booth #3.142</p>
             </div>
-            <a href="#contact" class="btn btn-outline"
+            <a href="upcoming-events.html" class="btn btn-outline"
               style="padding: 0.4rem 1rem; font-size: 0.85rem; align-self: flex-start;">Schedule Meeting</a>
           </div>
 
@@ -744,142 +763,12 @@
               <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Messe München, Munich,
                 Germany • Hall A2, Booth 380</p>
             </div>
-            <a href="#contact" class="btn btn-outline"
+            <a href="upcoming-events.html" class="btn btn-outline"
               style="padding: 0.4rem 1rem; font-size: 0.85rem; align-self: flex-start;">Schedule Meeting</a>
           </div>
         </div>
       </div>
 
-      <!-- Career Opportunities -->
-      <div id="career">
-        <div class="text-center">
-          <span class="section-tag">Join Our Team</span>
-          <h2 class="section-title">Career Opportunities at <span class="text-gradient">Sumati</span></h2>
-          <p class="section-subtitle">Shape the future of solar interconnect manufacturing with India's industry leader.
-          </p>
-        </div>
-
-        <div class="events-grid">
-          <div class="event-card glass-card">
-            <div>
-              <h3 style="font-size: 1.2rem; margin-bottom: 0.35rem;">Senior Metallurgical Engineer</h3>
-              <p style="color: var(--accent-gold); font-weight: 600; font-size: 0.8rem; margin-bottom: 0.55rem;">
-                Full-Time • Meerut Facility</p>
-              <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Responsible for copper
-                annealing heat treatment optimization and low-temperature solder alloy formulation.</p>
-            </div>
-            <a href="#contact" class="btn btn-primary"
-              style="padding: 0.4rem 1rem; font-size: 0.85rem; align-self: flex-start;">Apply Now</a>
-          </div>
-
-          <div class="event-card glass-card">
-            <div>
-              <h3 style="font-size: 1.2rem; margin-bottom: 0.35rem;">QA / QC Lab Manager</h3>
-              <p style="color: var(--accent-gold); font-weight: 600; font-size: 0.8rem; margin-bottom: 0.55rem;">
-                Full-Time • Meerut Facility</p>
-              <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Oversee dual-axis laser
-                micrometers, solderability zero-cross time testers, and tensile test benches.</p>
-            </div>
-            <a href="#contact" class="btn btn-primary"
-              style="padding: 0.4rem 1rem; font-size: 0.85rem; align-self: flex-start;">Apply Now</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Company History & Milestones -->
-  <section class="milestones section-padding" id="milestones">
-    <div class="container">
-      <div class="text-center">
-        <span class="section-tag">45+ Years Heritage</span>
-        <h2 class="section-title">Milestones That <span class="text-gradient">Shaped Sumati</span></h2>
-        <p class="section-subtitle">Over four decades of metallurgical mastery and commitment to renewable energy
-          advancement.</p>
-      </div>
-
-      <div class="timeline-container">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass-card">
-            <div class="timeline-year">1982</div>
-            <h4 style="font-size: 1rem;">Foundation in Meerut</h4>
-            <p style="font-size: 0.825rem; color: var(--text-muted);">Sumati Electronics established with a focus on
-              high-precision electronic components.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass-card">
-            <div class="timeline-year">2010</div>
-            <h4 style="font-size: 1rem;">Silver Wire Line</h4>
-            <p style="font-size: 0.825rem; color: var(--text-muted);">Entered silver-plated copper wire manufacturing
-              for electrical and solar sectors.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass-card">
-            <div class="timeline-year">2018</div>
-            <h4 style="font-size: 1rem;">PV Ribbon Launched</h4>
-            <p style="font-size: 0.825rem; color: var(--text-muted);">Started PV Ribbon production with a 10 MT/month
-              capacity in solar interconnects.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass-card">
-            <div class="timeline-year">2020</div>
-            <h4 style="font-size: 1rem;">Capacity Scaling</h4>
-            <p style="font-size: 0.825rem; color: var(--text-muted);">Enhanced capacity to 50 MT/month with advanced
-              process automation equipment.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass-card">
-            <div class="timeline-year">2021</div>
-            <h4 style="font-size: 1rem;">Busbar Production</h4>
-            <p style="font-size: 0.825rem; color: var(--text-muted);">Added 60 MT/month Busbar line; combined output
-              reached 110 MT/month.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass-card">
-            <div class="timeline-year">2022</div>
-            <h4 style="font-size: 1rem;">PV Wire Division</h4>
-            <p style="font-size: 0.825rem; color: var(--text-muted);">Launched PV Wire production with 50 MT/month
-              capacity; total output grew to 160 MT/month.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass-card">
-            <div class="timeline-year">2024</div>
-            <h4 style="font-size: 1rem;">5 GW Expansion</h4>
-            <p style="font-size: 0.825rem; color: var(--text-muted);">Achieved total installed capacity of 5 GW, serving
-              leading solar module makers.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass-card">
-            <div class="timeline-year">2025 - 2026+</div>
-            <h4 style="font-size: 1rem;">10 GW Target</h4>
-            <p style="font-size: 0.825rem; color: var(--text-muted);">Scaling up to 10 GW capacity with AI optical
-              quality sorting systems.</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -979,46 +868,30 @@
           </div>
         </div>
 
-        <!-- RFQ Form Card -->
-        <div class="rfq-form-card glass-card">
-          <h3 style="font-size: 1.5rem; margin-bottom: 1.1rem;">Request a Quotation (RFQ)</h3>
-
-          <form id="rfq-form">
-            <div class="form-row">
-              <div class="form-group">
-                <input type="text" id="rfq-name" required placeholder="Your Name *" class="form-control">
-              </div>
-              <div class="form-group">
-                <input type="email" id="rfq-email" required placeholder="Business Email *" class="form-control">
-              </div>
+        <!-- Equal Right Media / Plant Facility Photo Card -->
+        <div class="glass-card"
+          style="position: relative; overflow: hidden; border-radius: var(--radius-lg); height: 100%; min-height: 480px; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem; border: 1px solid var(--border-accent);">
+          <img src="assets/images/factory_facility.jpg" alt="Sumati Manufacturing Plant Facility"
+            style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+          <div
+            style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 10, 18, 0.15) 0%, rgba(7, 10, 18, 0.9) 100%);">
+          </div>
+          <div style="position: relative; z-index: 10;">
+            <span class="section-tag" style="margin-bottom: 0.6rem; background: rgba(245, 158, 11, 0.2);"><i
+                class="fas fa-industry"></i> Meerut Plant Facility</span>
+            <h3 style="font-size: 1.65rem; color: #fff; margin-bottom: 0.4rem; font-weight: 800;">5 GW Automated Plant
+            </h3>
+            <p style="color: rgba(255, 255, 255, 0.72); font-size: 0.875rem; margin-bottom: 1.1rem; line-height: 1.5; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">
+              Integrated manufacturing facility located at B 11, Industrial Estate, Partapur, Meerut, UP featuring automated wire drawing, continuous annealing, and laser optical inspection.
+            </p>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <a href="contact.html" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;"><i
+                  class="fas fa-envelope"></i> Contact Sales Team</a>
+              <a href="our-manufacturing.html" class="btn btn-outline"
+                style="padding: 0.55rem 1.25rem; font-size: 0.85rem; color: #fff; border-color: rgba(255,255,255,0.3);"><i
+                  class="fas fa-play-circle"></i> Tour Facility</a>
             </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <input type="text" id="rfq-phone" placeholder="Phone Number" class="form-control">
-              </div>
-              <div class="form-group">
-                <select id="rfq-product" class="form-control">
-                  <option value="PV Ribbon">Standard PV Ribbon</option>
-                  <option value="Reflective PV Busbar">Reflective PV Busbar</option>
-                  <option value="Multi-Busbar Wire">Multi-Busbar (MBB) Wire</option>
-                  <option value="Tinned Copper PV Wire">Tinned Copper PV Wire</option>
-                  <option value="PV Busbar">Precision PV Busbar</option>
-                  <option value="Ultrathin PV Busbar">Ultrathin PV Busbar</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <textarea id="rfq-message"
-                placeholder="Specify dimensions (width, thickness), alloy preference, and estimated monthly volume (MT)..."
-                class="form-control"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%;">
-              <i class="fas fa-paper-plane"></i> Send Quotation Request
-            </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -1029,7 +902,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a href="#home" class="brand-logo" style="margin-bottom: 0.85rem;">
+          <a href="index.html#home" class="brand-logo" style="margin-bottom: 0.85rem;">
             <svg viewBox="0 0 100 100" fill="none" width="32" height="32">
               <circle cx="50" cy="50" r="45" stroke="#F59E0B" stroke-width="6" />
               <circle cx="50" cy="50" r="18" fill="#F59E0B" />
@@ -1055,24 +928,24 @@
         <div>
           <h4 class="footer-heading">Explore</h4>
           <ul class="footer-links">
-            <li><a href="#products">Products</a></li>
-            <li><a href="#about">Our Company</a></li>
-            <li><a href="#manufacturing">Our Manufacturing</a></li>
-            <li><a href="#gallery">Media & Gallery</a></li>
-            <li><a href="#events">Upcoming Events</a></li>
-            <li><a href="#career">Career</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="our-company.html">Our Company</a></li>
+            <li><a href="our-manufacturing.html">Our Manufacturing</a></li>
+            <li><a href="gallery.html">Media & Gallery</a></li>
+            <li><a href="upcoming-events.html">Upcoming Events</a></li>
+            <li><a href="career.html">Career</a></li>
           </ul>
         </div>
 
         <div>
           <h4 class="footer-heading">Products</h4>
           <ul class="footer-links">
-            <li><a href="#products">PV Ribbon</a></li>
-            <li><a href="#products">Reflective PV Busbar</a></li>
-            <li><a href="#products">Multi Busbar PV Wire</a></li>
-            <li><a href="#products">PV Wire</a></li>
-            <li><a href="#products">PV Busbar</a></li>
-            <li><a href="#products">Ultrathin PV Busbar</a></li>
+            <li><a href="pv-ribbon.html">PV Ribbon</a></li>
+            <li><a href="reflective-pv-busbar.html">Reflective PV Busbar</a></li>
+            <li><a href="multi-busbar-pv-wire.html">Multi Busbar PV Wire</a></li>
+            <li><a href="pv-wire.html">PV Wire</a></li>
+            <li><a href="pv-busbar.html">PV Busbar</a></li>
+            <li><a href="ultrathin-pv-busbar.html">Ultrathin PV Busbar</a></li>
           </ul>
         </div>
 
@@ -1126,8 +999,31 @@
       </table>
 
       <div style="display: flex; gap: 1rem; margin-top: 1.1rem; justify-content: flex-end;">
-        <a href="#contact" class="btn btn-primary"
+        <a href="contact.html" class="btn btn-primary"
           onclick="document.getElementById('product-modal').classList.remove('active');">Request Quotation</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-Screen Gallery Lightbox Modal -->
+  <div class="lightbox-overlay" id="gallery-lightbox">
+    <div class="lightbox-container">
+      <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close Lightbox">&times;</button>
+      <button class="lightbox-nav-btn prev-btn" id="lightbox-prev" aria-label="Previous Media"><i
+          class="fas fa-chevron-left"></i></button>
+      <button class="lightbox-nav-btn next-btn" id="lightbox-next" aria-label="Next Media"><i
+          class="fas fa-chevron-right"></i></button>
+
+      <div class="lightbox-media-wrapper" id="lightbox-media-wrapper">
+        <!-- Media content injected via JS -->
+      </div>
+
+      <div class="lightbox-caption-bar">
+        <div>
+          <h3 id="lightbox-title">Media Title</h3>
+          <p id="lightbox-desc">Media Description</p>
+        </div>
+        <div class="lightbox-counter" id="lightbox-counter">1 / 6</div>
       </div>
     </div>
   </div>
