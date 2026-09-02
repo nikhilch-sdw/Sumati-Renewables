@@ -56,7 +56,6 @@
           <a href="gallery.html" class="nav-link active">Discover <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i></a>
           <div class="dropdown-menu">
             <a href="gallery.html" class="dropdown-item">Media & Gallery</a>
-            <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
             <a href="our-company.html" class="dropdown-item">Our Story</a>
             <a href="career.html" class="dropdown-item">Career</a>
           </div>
@@ -80,48 +79,43 @@
   </header>
 
   <!-- Page Banner -->
-  <section class="section-padding" style="padding-top: 7rem; padding-bottom: 2.5rem; background: var(--bg-secondary);">
+  <section class="section-padding section-ambient-cool" style="padding-top: 7rem; padding-bottom: 2.5rem;">
     <div class="container text-center">
-      <span class="section-tag"><i class="fas fa-photo-video"></i> Media Showcase</span>
-      <h1 class="section-title">Plant & Product <span class="text-gradient">Gallery</span></h1>
+      <span class="section-tag section-tag-amber"><i class="fas fa-photo-video"></i> Media Showcase</span>
+      <h1 class="section-title">Plant & Product <span class="text-gradient-flame">Gallery</span></h1>
       <p class="section-subtitle">Take a glimpse inside our state-of-the-art Partapur, Meerut manufacturing facility and high-performance product line.</p>
     </div>
   </section>
 
   <!-- Interactive Gallery Grid -->
-  <section class="section-padding">
+  <section class="section-padding section-ambient-gallery">
     <div class="container">
       
       <div class="gallery-filter-bar">
-        <button class="gallery-filter-btn active" data-filter="all">All Media</button>
-        <button class="gallery-filter-btn" data-filter="videos">Video Tours</button>
+        <button class="gallery-filter-btn active" data-filter="all">All Photos</button>
         <button class="gallery-filter-btn" data-filter="facility">Plant Facility</button>
         <button class="gallery-filter-btn" data-filter="products">Products</button>
       </div>
 
       <div class="gallery-grid" id="gallery-grid">
         
-        <!-- Item 1: Plant Video Tour -->
-        <div class="gallery-card glass-card" data-category="videos facility" data-type="video" data-src="assets/videos/manufacturing_tour.mp4" data-title="Integrated Manufacturing Plant Facility" data-desc="Automated wire drawing, annealing, and hot-dip tinning at Partapur, Meerut.">
-          <video autoplay loop muted playsinline>
-            <source src="assets/videos/manufacturing_tour.mp4" type="video/mp4">
-          </video>
-          <span class="gallery-media-badge"><i class="fas fa-video"></i> HD Video</span>
+        <!-- Item 1: Integrated Plant Facility -->
+        <div class="gallery-card glass-card" data-category="facility" data-type="image" data-src="assets/images/factory_facility.jpg" data-title="Integrated Manufacturing Plant Facility" data-desc="Automated wire drawing, annealing, and hot-dip tinning at Partapur, Meerut.">
+          <img src="assets/images/factory_facility.jpg" alt="Integrated Plant Facility">
+          <span class="gallery-media-badge"><i class="fas fa-camera"></i> Photo</span>
           <div class="gallery-overlay">
-            <div class="gallery-play-icon"><i class="fas fa-play"></i></div>
+            <div class="gallery-play-icon"><i class="fas fa-search-plus"></i></div>
             <h4 class="gallery-item-title">Integrated Plant Facility</h4>
             <p class="gallery-item-desc">Partapur Industrial Estate, Meerut</p>
           </div>
         </div>
 
-        <!-- Item 2: PV Ribbon Spool Video -->
-        <div class="gallery-card glass-card" data-category="videos products" data-type="video" data-src="assets/videos/pv.mp4" data-title="Precision Tinned Copper Spool Array" data-desc="DIN160 and DIN200 tension-controlled spools ready for packaging.">
-          <video autoplay loop muted playsinline>
-            <source src="assets/videos/pv.mp4" type="video/mp4">
-          </video>
-          <span class="gallery-media-badge"><i class="fas fa-video"></i> HD Video</span>
+        <!-- Item 2: PV Ribbon Spool Array -->
+        <div class="gallery-card glass-card" data-category="products" data-type="image" data-src="assets/images/pv_ribbon_product.jpg" data-title="Precision Tinned Copper Spool Array" data-desc="DIN160 and DIN200 tension-controlled spools ready for packaging.">
+          <img src="assets/images/pv_ribbon_product.jpg" alt="Precision Spool Reel Array">
+          <span class="gallery-media-badge"><i class="fas fa-camera"></i> Photo</span>
           <div class="gallery-overlay">
-            <div class="gallery-play-icon"><i class="fas fa-play"></i></div>
+            <div class="gallery-play-icon"><i class="fas fa-search-plus"></i></div>
             <h4 class="gallery-item-title">Precision Spool Reel Array</h4>
             <p class="gallery-item-desc">DIN160 & DIN200 Reel Packaging</p>
           </div>
@@ -149,29 +143,47 @@
           </div>
         </div>
 
-        <!-- Item 5: Continuous Hot-Dip Tinning Video -->
-        <div class="gallery-card glass-card" data-category="videos facility" data-type="video" data-src="assets/videos/1.mp4" data-title="Continuous Hot-Dip Tinning Process" data-desc="10-30µm uniform solder coating application on high-purity ETP copper.">
-          <video autoplay loop muted playsinline>
-            <source src="assets/videos/1.mp4" type="video/mp4">
-          </video>
-          <span class="gallery-media-badge"><i class="fas fa-video"></i> HD Video</span>
+        <!-- Item 5: Continuous Hot-Dip Tinning -->
+        <div class="gallery-card glass-card" data-category="facility" data-type="image" data-src="assets/images/hot_dip_tinning.jpg" data-title="Continuous Hot-Dip Tinning Process" data-desc="10-30µm uniform solder coating application on high-purity ETP copper.">
+          <img src="assets/images/hot_dip_tinning.jpg" alt="Continuous Hot-Dip Tinning Process">
+          <span class="gallery-media-badge"><i class="fas fa-camera"></i> Photo</span>
           <div class="gallery-overlay">
-            <div class="gallery-play-icon"><i class="fas fa-play"></i></div>
+            <div class="gallery-play-icon"><i class="fas fa-search-plus"></i></div>
             <h4 class="gallery-item-title">Continuous Hot-Dip Tinning</h4>
             <p class="gallery-item-desc">10–30µm Uniform Solder Coating</p>
           </div>
         </div>
 
-        <!-- Item 6: Laser Optical Micrometer Inspection Video -->
-        <div class="gallery-card glass-card" data-category="videos facility" data-type="video" data-src="assets/videos/2.mp4" data-title="Dual-Axis Laser Micrometer Quality Control" data-desc="Real-time in-line dimension monitoring for ±0.005mm width and thickness tolerance.">
-          <video autoplay loop muted playsinline>
-            <source src="assets/videos/2.mp4" type="video/mp4">
-          </video>
-          <span class="gallery-media-badge"><i class="fas fa-video"></i> HD Video</span>
+        <!-- Item 6: Laser Optical Micrometer Inspection -->
+        <div class="gallery-card glass-card" data-category="facility" data-type="image" data-src="assets/images/laser_micrometer_inspection.jpg" data-title="Dual-Axis Laser Micrometer Quality Control" data-desc="Real-time in-line dimension monitoring for ±0.005mm width and thickness tolerance.">
+          <img src="assets/images/laser_micrometer_inspection.jpg" alt="Laser Optical Inspection">
+          <span class="gallery-media-badge"><i class="fas fa-camera"></i> Photo</span>
           <div class="gallery-overlay">
-            <div class="gallery-play-icon"><i class="fas fa-play"></i></div>
+            <div class="gallery-play-icon"><i class="fas fa-search-plus"></i></div>
             <h4 class="gallery-item-title">Laser Optical Inspection</h4>
             <p class="gallery-item-desc">Dual-Axis Micrometer Monitoring</p>
+          </div>
+        </div>
+
+        <!-- Item 7: Cleanroom Robotics Facility -->
+        <div class="gallery-card glass-card" data-category="facility" data-type="image" data-src="assets/images/about_company.jpg" data-title="Automated Cleanroom Robotics" data-desc="Class 10,000 cleanroom environment for precision solar ribbon production.">
+          <img src="assets/images/about_company.jpg" alt="Automated Cleanroom Robotics">
+          <span class="gallery-media-badge"><i class="fas fa-camera"></i> Photo</span>
+          <div class="gallery-overlay">
+            <div class="gallery-play-icon"><i class="fas fa-search-plus"></i></div>
+            <h4 class="gallery-item-title">Cleanroom Robotics</h4>
+            <p class="gallery-item-desc">Automated Cleanroom Assembly</p>
+          </div>
+        </div>
+
+        <!-- Item 8: Precision PV Busbar Matrix -->
+        <div class="gallery-card glass-card" data-category="products" data-type="image" data-src="assets/images/pv_busbar_product.jpg" data-title="Precision PV Busbar Matrix" data-desc="Heavy-duty current collection busbars soldered across solar cell strings.">
+          <img src="assets/images/pv_busbar_product.jpg" alt="Precision PV Busbar Matrix">
+          <span class="gallery-media-badge"><i class="fas fa-camera"></i> Photo</span>
+          <div class="gallery-overlay">
+            <div class="gallery-play-icon"><i class="fas fa-search-plus"></i></div>
+            <h4 class="gallery-item-title">PV Busbar Matrix</h4>
+            <p class="gallery-item-desc">Heavy-Duty Cell Interconnect</p>
           </div>
         </div>
 
@@ -227,7 +239,6 @@
             <li><a href="our-company.html">Our Company</a></li>
             <li><a href="our-manufacturing.html">Our Manufacturing</a></li>
             <li><a href="gallery.html">Media & Gallery</a></li>
-            <li><a href="upcoming-events.html">Upcoming Events</a></li>
             <li><a href="career.html">Career</a></li>
           </ul>
         </div>

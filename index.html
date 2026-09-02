@@ -38,10 +38,10 @@
   <!-- Header Navigation -->
   <header class="header">
     <div class="container nav-wrapper">
-              <a href="index.html" class="brand-logo">
-          <img src="assets/images/logo_white.png" alt="Sumati Renewables Logo" class="logo-img logo-white">
-          <img src="assets/images/logo_blue.png" alt="Sumati Renewables Logo" class="logo-img logo-blue">
-        </a>
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo_white.png" alt="Sumati Renewables Logo" class="logo-img logo-white">
+        <img src="assets/images/logo_blue.png" alt="Sumati Renewables Logo" class="logo-img logo-blue">
+      </a>
 
       <nav class="nav-menu" id="nav-menu">
         <div class="nav-item">
@@ -79,7 +79,6 @@
               style="font-size: 0.75rem;"></i></a>
           <div class="dropdown-menu">
             <a href="gallery.html" class="dropdown-item">Media & Gallery</a>
-            <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
             <a href="our-company.html" class="dropdown-item">Our Story</a>
             <a href="career.html" class="dropdown-item">Career</a>
           </div>
@@ -102,37 +101,15 @@
     </div>
   </header>
 
-  <!-- Full-Screen Video Hero Banner with Sleek Floating Bottom Stats Overlay -->
+  <!-- Full-Screen Video Hero Banner -->
   <section class="hero-video-section" id="home">
     <video autoplay loop muted playsinline class="hero-video-bg">
       <source src="assets/videos/hero_banner.mp4" type="video/mp4">
     </video>
-
-    <!-- Floating Stats Strip Overlay at Bottom of Video -->
-    <div class="hero-bottom-stats-overlay">
-      <div class="overlay-metrics-grid">
-        <div class="stat-card-overlay">
-          <div class="stat-number" data-target="5" data-suffix=" GW+">0</div>
-          <div class="stat-label">Installed Supply Capacity</div>
-        </div>
-        <div class="stat-card-overlay">
-          <div class="stat-number" data-target="45" data-suffix="+ Yrs">0</div>
-          <div class="stat-label">Manufacturing Excellence</div>
-        </div>
-        <div class="stat-card-overlay">
-          <div class="stat-number" data-target="100" data-suffix="+">0</div>
-          <div class="stat-label">Solar OEM Partners</div>
-        </div>
-        <div class="stat-card-overlay">
-          <div class="stat-number" data-target="99.9" data-suffix="%">0</div>
-          <div class="stat-label">Quality Yield Standard</div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- Plant Video Showcase Section -->
-  <section class="video-showcase-section section-padding">
+  <section class="video-showcase-section section-padding section-ambient-cool">
     <div class="container">
       <div class="text-center">
         <span class="section-tag"><i class="fas fa-video"></i> Plant Video Tour</span>
@@ -145,12 +122,10 @@
         <!-- Video Card 1 -->
         <div class="video-card-box">
           <video autoplay loop muted playsinline>
-            <source src="assets/videos/manufacturing_tour.mp4" type="video/mp4">
+            <source src="assets/videos/2.mp4" type="video/mp4">
           </video>
           <div class="video-card-overlay">
-            <h3 style="font-size: 1.25rem; color: #fff;">Automated Precision Wire Drawing</h3>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">Multi-pass diamond dies drawing copper wire to
-              ±0.005mm accuracy.</p>
+            <h3>Precision Wire Drawing</h3>
           </div>
         </div>
 
@@ -160,9 +135,7 @@
             <source src="assets/videos/pv_ribbon.mp4" type="video/mp4">
           </video>
           <div class="video-card-overlay">
-            <h3 style="font-size: 1.25rem; color: #fff;">High-Speed Continuous Hot-Dip Tinning</h3>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">10-30µm uniform solder coating application on
-              high-purity ETP copper.</p>
+            <h3>Continuous Hot-Dip Tinning</h3>
           </div>
         </div>
 
@@ -172,9 +145,7 @@
             <source src="assets/videos/banner_showcase.mp4" type="video/mp4">
           </video>
           <div class="video-card-overlay">
-            <h3 style="font-size: 1.25rem; color: #fff;">Tension Spooling & Quality Testing</h3>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">DIN160 & DIN200 spool reel packaging with dual-axis
-              laser verification.</p>
+            <h3>Precision Tension Spooling</h3>
           </div>
         </div>
       </div>
@@ -187,9 +158,8 @@
       <div class="about-grid">
         <!-- Equal Left Media Card -->
         <div class="about-card-left">
-          <video autoplay loop muted playsinline>
-            <source src="assets/videos/manufacturing_tour.mp4" type="video/mp4">
-          </video>
+          <img src="assets/images/about_company.jpg" alt="Sumati Renewables Precision Solar Manufacturing Facility"
+            loading="lazy">
         </div>
 
         <!-- Equal Right Content Column -->
@@ -204,7 +174,7 @@
 
           <div class="about-features-list">
             <div class="about-feature-item">
-              <div class="about-feature-icon"><i class="fas fa-check"></i></div>
+              <div class="about-feature-icon icon-blue"><i class="fas fa-solar-panel"></i></div>
               <div>
                 <h4 style="font-size: 0.95rem; font-weight: 700;">High-Performance Modules</h4>
                 <p style="font-size: 0.85rem; color: var(--text-muted);">Trusted by 100+ global solar module
@@ -212,7 +182,7 @@
               </div>
             </div>
             <div class="about-feature-item">
-              <div class="about-feature-icon"><i class="fas fa-check"></i></div>
+              <div class="about-feature-icon icon-green"><i class="fas fa-shield-alt"></i></div>
               <div>
                 <h4 style="font-size: 0.95rem; font-weight: 700;">Precision Laser Control</h4>
                 <p style="font-size: 0.85rem; color: var(--text-muted);">Dual-axis in-line laser micrometers
@@ -220,7 +190,7 @@
               </div>
             </div>
             <div class="about-feature-item">
-              <div class="about-feature-icon"><i class="fas fa-check"></i></div>
+              <div class="about-feature-icon icon-amber"><i class="fas fa-award"></i></div>
               <div>
                 <h4 style="font-size: 0.95rem; font-weight: 700;">45+ Years Expertise</h4>
                 <p style="font-size: 0.85rem; color: var(--text-muted);">Over four decades of metallurgical mastery in
@@ -238,11 +208,11 @@
   </section>
 
   <!-- Products Showcase (Official pvribbon.in Product Videos & 2-Line Minimal Cards) -->
-  <section class="products section-padding" id="products">
+  <section class="products section-padding section-ambient-products" id="products">
     <div class="container">
       <div class="text-center">
         <span class="section-tag">Product Portfolio</span>
-        <h2 class="section-title">High-Performance <span class="text-gradient">Solar Interconnects</span></h2>
+        <h2 class="section-title">High-Performance <span class="text-gradient-flame">Solar Interconnects</span></h2>
         <p class="section-subtitle">Engineered to minimize internal series resistance, eliminate micro-cracking, and
           maximize power conversion efficiency.</p>
       </div>
@@ -265,7 +235,7 @@
             <video autoplay loop muted playsinline>
               <source src="assets/videos/pv.mp4" type="video/mp4">
             </video>
-            <span class="product-tag-badge">Flagship</span>
+            <span class="product-tag-badge badge-blue"><i class="fas fa-layer-group"></i> Flagship TU1</span>
           </div>
           <div class="product-body">
             <div>
@@ -286,7 +256,8 @@
             <div class="product-card-footer">
               <a href="pv-ribbon.html" class="btn btn-outline"
                 style="padding: 0.5rem 0.85rem; font-size: 0.825rem;">View Overview</a>
-              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Request Quote</a>
+              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Request
+                Quote</a>
             </div>
           </div>
         </div>
@@ -297,7 +268,7 @@
             <video autoplay loop muted playsinline>
               <source src="assets/videos/1.mp4" type="video/mp4">
             </video>
-            <span class="product-tag-badge">+1.5% Gain</span>
+            <span class="product-tag-badge badge-amber"><i class="fas fa-bolt"></i> +1.5% Gain</span>
           </div>
           <div class="product-body">
             <div>
@@ -318,7 +289,8 @@
             <div class="product-card-footer">
               <a href="reflective-pv-busbar.html" class="btn btn-outline"
                 style="padding: 0.5rem 0.85rem; font-size: 0.825rem;">View Overview</a>
-              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Request Quote</a>
+              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Request
+                Quote</a>
             </div>
           </div>
         </div>
@@ -329,7 +301,7 @@
             <video autoplay loop muted playsinline>
               <source src="assets/videos/2.mp4" type="video/mp4">
             </video>
-            <span class="product-tag-badge">9BB - 16BB</span>
+            <span class="product-tag-badge badge-green"><i class="fas fa-microchip"></i> 9BB – 16BB</span>
           </div>
           <div class="product-body">
             <div>
@@ -350,7 +322,8 @@
             <div class="product-card-footer">
               <a href="multi-busbar-pv-wire.html" class="btn btn-outline"
                 style="padding: 0.5rem 0.85rem; font-size: 0.825rem;">View Overview</a>
-              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Request Quote</a>
+              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Request
+                Quote</a>
             </div>
           </div>
         </div>
@@ -361,7 +334,7 @@
             <video autoplay loop muted playsinline>
               <source src="assets/videos/3.mp4" type="video/mp4">
             </video>
-            <span class="product-tag-badge">Flexible</span>
+            <span class="product-tag-badge badge-blue"><i class="fas fa-plug"></i> High Flexibility</span>
           </div>
           <div class="product-body">
             <div>
@@ -380,9 +353,10 @@
               </div>
             </div>
             <div class="product-card-footer">
-              <a href="pv-wire.html" class="btn btn-outline"
-                style="padding: 0.5rem 0.85rem; font-size: 0.825rem;">View Overview</a>
-              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Request Quote</a>
+              <a href="pv-wire.html" class="btn btn-outline" style="padding: 0.5rem 0.85rem; font-size: 0.825rem;">View
+                Overview</a>
+              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Request
+                Quote</a>
             </div>
           </div>
         </div>
@@ -393,7 +367,7 @@
             <video autoplay loop muted playsinline>
               <source src="assets/videos/4.mp4" type="video/mp4">
             </video>
-            <span class="product-tag-badge">Heavy Duty</span>
+            <span class="product-tag-badge badge-amber"><i class="fas fa-bolt"></i> High Ampacity</span>
           </div>
           <div class="product-body">
             <div>
@@ -414,7 +388,8 @@
             <div class="product-card-footer">
               <a href="pv-busbar.html" class="btn btn-outline"
                 style="padding: 0.5rem 0.85rem; font-size: 0.825rem;">View Overview</a>
-              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Request Quote</a>
+              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Request
+                Quote</a>
             </div>
           </div>
         </div>
@@ -425,7 +400,7 @@
             <video autoplay loop muted playsinline>
               <source src="assets/videos/5.mp4" type="video/mp4">
             </video>
-            <span class="product-tag-badge">TOPCon / HJT</span>
+            <span class="product-tag-badge badge-green"><i class="fas fa-leaf"></i> 98% Stress Cut</span>
           </div>
           <div class="product-body">
             <div>
@@ -446,7 +421,8 @@
             <div class="product-card-footer">
               <a href="ultrathin-pv-busbar.html" class="btn btn-outline"
                 style="padding: 0.5rem 0.85rem; font-size: 0.825rem;">View Overview</a>
-              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Request Quote</a>
+              <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Request
+                Quote</a>
             </div>
           </div>
         </div>
@@ -517,97 +493,118 @@
   <section class="manufacturing section-padding" id="manufacturing">
     <div class="container">
       <div class="text-center">
-        <span class="section-tag">Manufacturing Excellence</span>
-        <h2 class="section-title">6-Step Integrated <span class="text-gradient">Production Process</span></h2>
-        <p class="section-subtitle">From high-purity copper rod selection to automated laser optical sorting, every step
-          is monitored for zero defects.</p>
+        <span class="section-tag-glow"><i class="fas fa-microchip"></i> Integrated Plant Engineering</span>
+        <h2 class="section-title">6-Step Precision <span class="text-gradient-cyan">Manufacturing Process</span></h2>
+        <p class="section-subtitle">From 99.99% ETP copper rod selection to automated laser optical sorting, every step is engineered for zero defects.</p>
       </div>
 
-      <!-- Minimalist Icon Box Grid -->
-      <div class="mfg-minimal-grid">
+      <!-- Modern Glassmorphic Connected Process Grid -->
+      <div class="mfg-modern-grid">
 
         <!-- Step 1 Card -->
         <div class="mfg-step-card">
-          <div class="mfg-step-header">
-            <div class="mfg-icon-box"><i class="fas fa-layer-group"></i></div>
-            <span class="mfg-step-num">01</span>
-          </div>
           <div>
+            <div class="mfg-step-header">
+              <div class="mfg-icon-box"><i class="fas fa-layer-group"></i></div>
+              <span class="mfg-step-num">Step 01</span>
+            </div>
             <h3 class="mfg-step-title">ETP Copper Selection</h3>
-            <p class="mfg-step-desc">99.99% Electrolytic Tough Pitch copper rod sourcing ensuring maximum electrical
-              conductivity.</p>
+            <p class="mfg-step-desc">99.99% ETP copper rod sourcing ensuring maximum electrical conductivity.</p>
           </div>
+          <div class="mfg-step-tag"><i class="fas fa-circle-notch"></i> Stage 01: Raw Metallurgy</div>
         </div>
 
         <!-- Step 2 Card -->
         <div class="mfg-step-card">
-          <div class="mfg-step-header">
-            <div class="mfg-icon-box"><i class="fas fa-compress-arrows-alt"></i></div>
-            <span class="mfg-step-num">02</span>
-          </div>
           <div>
+            <div class="mfg-step-header">
+              <div class="mfg-icon-box"><i class="fas fa-compress-arrows-alt"></i></div>
+              <span class="mfg-step-num">Step 02</span>
+            </div>
             <h3 class="mfg-step-title">Micro Wire Drawing</h3>
-            <p class="mfg-step-desc">Multi-pass diamond die drawing for precise flat ribbon or round MBB wire sizing.
-            </p>
+            <p class="mfg-step-desc">Multi-pass diamond die drawing for precise flat ribbon or round MBB wire sizing.</p>
           </div>
+          <div class="mfg-step-tag"><i class="fas fa-circle-notch"></i> Stage 02: Precision Sizing</div>
         </div>
 
         <!-- Step 3 Card -->
         <div class="mfg-step-card">
-          <div class="mfg-step-header">
-            <div class="mfg-icon-box"><i class="fas fa-fire-alt"></i></div>
-            <span class="mfg-step-num">03</span>
-          </div>
           <div>
+            <div class="mfg-step-header">
+              <div class="mfg-icon-box"><i class="fas fa-fire-alt"></i></div>
+              <span class="mfg-step-num">Step 03</span>
+            </div>
             <h3 class="mfg-step-title">Continuous Annealing</h3>
-            <p class="mfg-step-desc">In-line controlled gas atmosphere annealing achieving ultra-soft yield stress
-              (&lt;80 MPa).</p>
+            <p class="mfg-step-desc">Controlled inert atmosphere annealing achieving ultra-soft yield stress (&lt;80 MPa).</p>
           </div>
+          <div class="mfg-step-tag"><i class="fas fa-circle-notch"></i> Stage 03: Thermal Treatment</div>
         </div>
 
         <!-- Step 4 Card -->
         <div class="mfg-step-card">
-          <div class="mfg-step-header">
-            <div class="mfg-icon-box"><i class="fas fa-tint"></i></div>
-            <span class="mfg-step-num">04</span>
-          </div>
           <div>
+            <div class="mfg-step-header">
+              <div class="mfg-icon-box"><i class="fas fa-tint"></i></div>
+              <span class="mfg-step-num">Step 04</span>
+            </div>
             <h3 class="mfg-step-title">Hot-Dip Tin Plating</h3>
-            <p class="mfg-step-desc">Uniform continuous tin coating (Sn60Pb40, SnAgCu lead-free) with 10-30µm thickness
-              control.</p>
+            <p class="mfg-step-desc">Continuous uniform tin coating with precise 10–30µm thickness control.</p>
           </div>
+          <div class="mfg-step-tag"><i class="fas fa-circle-notch"></i> Stage 04: Solder Coating</div>
         </div>
 
         <!-- Step 5 Card -->
         <div class="mfg-step-card">
-          <div class="mfg-step-header">
-            <div class="mfg-icon-box"><i class="fas fa-eye"></i></div>
-            <span class="mfg-step-num">05</span>
-          </div>
           <div>
+            <div class="mfg-step-header">
+              <div class="mfg-icon-box"><i class="fas fa-eye"></i></div>
+              <span class="mfg-step-num">Step 05</span>
+            </div>
             <h3 class="mfg-step-title">Laser Inspection</h3>
-            <p class="mfg-step-desc">Dual-axis laser micrometer monitoring for 100% real-time thickness & width
-              compliance.</p>
+            <p class="mfg-step-desc">Dual-axis laser micrometer monitoring for 100% real-time dimensional compliance.</p>
           </div>
+          <div class="mfg-step-tag"><i class="fas fa-circle-notch"></i> Stage 05: Quality Assurance</div>
         </div>
 
         <!-- Step 6 Card -->
         <div class="mfg-step-card">
-          <div class="mfg-step-header">
-            <div class="mfg-icon-box"><i class="fas fa-compact-disc"></i></div>
-            <span class="mfg-step-num">06</span>
-          </div>
           <div>
+            <div class="mfg-step-header">
+              <div class="mfg-icon-box"><i class="fas fa-compact-disc"></i></div>
+              <span class="mfg-step-num">Step 06</span>
+            </div>
             <h3 class="mfg-step-title">Precision Spooling</h3>
-            <p class="mfg-step-desc">Tension-controlled spooling on DIN160/DIN200 reels with vacuum barrier foil
-              packaging.</p>
+            <p class="mfg-step-desc">Tension-controlled spooling on DIN reels with vacuum barrier foil packaging.</p>
           </div>
+          <div class="mfg-step-tag"><i class="fas fa-circle-notch"></i> Stage 06: Packaging & Dispatch</div>
         </div>
 
       </div>
 
-      <div class="text-center" style="margin-top: 2rem;">
-        <a href="our-manufacturing.html" class="btn btn-outline">Explore Full Manufacturing Facility Page</a>
+      <div class="text-center" style="margin-top: 3rem;">
+        <a href="our-manufacturing.html" class="btn-glow-cyan">
+          <i class="fas fa-industry"></i> Explore Full Manufacturing Facility <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Panoramic Plant Video Showcase Section -->
+  <section class="cinematic-tour-section section-padding" id="plant-video-tour">
+    <div class="container-wide">
+      <div class="text-center">
+        <span class="section-tag"><i class="fas fa-film"></i> Video Showcase</span>
+        <h2 class="section-title">Experience Our Integrated <span class="text-gradient">Manufacturing Plant</span></h2>
+        <p class="section-subtitle">Take an immersive virtual tour through our modern facility in Meerut, featuring
+          precision wire drawing, continuous annealing, and automated quality verification.</p>
+      </div>
+
+      <div class="cinematic-video-container">
+        <span class="cinematic-video-badge"><i class="fas fa-video"></i> Tension Spooling & Precision Reel
+          Inspection</span>
+        <video autoplay loop muted playsinline controls>
+          <source src="assets/videos/banner_showcase.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </section>
@@ -617,18 +614,17 @@
     <div class="container">
 
       <!-- Media Gallery -->
-      <div id="gallery" style="margin-bottom: 3.5rem;">
+      <div id="gallery" class="section-ambient-gallery" style="margin-bottom: 3.5rem; padding: 3.5rem 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-light);">
         <div class="text-center">
           <span class="section-tag"><i class="fas fa-photo-video"></i> Media Showcase</span>
-          <h2 class="section-title">Plant & Product <span class="text-gradient">Gallery</span></h2>
+          <h2 class="section-title">Plant & Product <span class="text-gradient-flame">Gallery</span></h2>
           <p class="section-subtitle">Take a glimpse inside our state-of-the-art Partapur, Meerut manufacturing facility
             and high-performance product line.</p>
         </div>
 
         <!-- Interactive Category Filter -->
         <div class="gallery-filter-bar">
-          <button class="gallery-filter-btn active" data-filter="all">All Media</button>
-          <button class="gallery-filter-btn" data-filter="videos">Video Tours</button>
+          <button class="gallery-filter-btn active" data-filter="all">All Photos</button>
           <button class="gallery-filter-btn" data-filter="facility">Plant Facility</button>
           <button class="gallery-filter-btn" data-filter="products">Products</button>
         </div>
@@ -636,31 +632,27 @@
         <!-- Ultra-Premium Gallery Grid -->
         <div class="gallery-grid" id="gallery-grid">
 
-          <!-- Item 1: Plant Video Tour -->
-          <div class="gallery-card glass-card" data-category="videos facility" data-type="video"
-            data-src="assets/videos/manufacturing_tour.mp4" data-title="Integrated Manufacturing Plant Facility"
+          <!-- Item 1: Integrated Plant Facility -->
+          <div class="gallery-card glass-card" data-category="facility" data-type="image"
+            data-src="assets/images/factory_facility.jpg" data-title="Integrated Manufacturing Plant Facility"
             data-desc="Automated wire drawing, annealing, and hot-dip tinning at Partapur, Meerut.">
-            <video autoplay loop muted playsinline>
-              <source src="assets/videos/manufacturing_tour.mp4" type="video/mp4">
-            </video>
-            <span class="gallery-media-badge"><i class="fas fa-video"></i> HD Video</span>
+            <img src="assets/images/factory_facility.jpg" alt="Integrated Plant Facility">
+            <span class="gallery-media-badge"><i class="fas fa-camera"></i> Photo</span>
             <div class="gallery-overlay">
-              <div class="gallery-play-icon"><i class="fas fa-play"></i></div>
+              <div class="gallery-play-icon"><i class="fas fa-search-plus"></i></div>
               <h4 class="gallery-item-title">Integrated Plant Facility</h4>
               <p class="gallery-item-desc">Partapur Industrial Estate, Meerut</p>
             </div>
           </div>
 
-          <!-- Item 2: PV Ribbon Spool Video -->
-          <div class="gallery-card glass-card" data-category="videos products" data-type="video"
-            data-src="assets/videos/pv.mp4" data-title="Precision Tinned Copper Spool Array"
+          <!-- Item 2: PV Ribbon Spool Array -->
+          <div class="gallery-card glass-card" data-category="products" data-type="image"
+            data-src="assets/images/pv_ribbon_product.jpg" data-title="Precision Tinned Copper Spool Array"
             data-desc="DIN160 and DIN200 tension-controlled spools ready for packaging.">
-            <video autoplay loop muted playsinline>
-              <source src="assets/videos/pv.mp4" type="video/mp4">
-            </video>
-            <span class="gallery-media-badge"><i class="fas fa-video"></i> HD Video</span>
+            <img src="assets/images/pv_ribbon_product.jpg" alt="Precision Spool Reel Array">
+            <span class="gallery-media-badge"><i class="fas fa-camera"></i> Photo</span>
             <div class="gallery-overlay">
-              <div class="gallery-play-icon"><i class="fas fa-play"></i></div>
+              <div class="gallery-play-icon"><i class="fas fa-search-plus"></i></div>
               <h4 class="gallery-item-title">Precision Spool Reel Array</h4>
               <p class="gallery-item-desc">DIN160 & DIN200 Reel Packaging</p>
             </div>
@@ -692,33 +684,55 @@
             </div>
           </div>
 
-          <!-- Item 5: Continuous Hot-Dip Tinning Video -->
-          <div class="gallery-card glass-card" data-category="videos facility" data-type="video"
-            data-src="assets/videos/1.mp4" data-title="Continuous Hot-Dip Tinning Process"
+          <!-- Item 5: Continuous Hot-Dip Tinning -->
+          <div class="gallery-card glass-card" data-category="facility" data-type="image"
+            data-src="assets/images/hot_dip_tinning.jpg" data-title="Continuous Hot-Dip Tinning Process"
             data-desc="10-30µm uniform solder coating application on high-purity ETP copper.">
-            <video autoplay loop muted playsinline>
-              <source src="assets/videos/1.mp4" type="video/mp4">
-            </video>
-            <span class="gallery-media-badge"><i class="fas fa-video"></i> HD Video</span>
+            <img src="assets/images/hot_dip_tinning.jpg" alt="Continuous Hot-Dip Tinning Process">
+            <span class="gallery-media-badge"><i class="fas fa-camera"></i> Photo</span>
             <div class="gallery-overlay">
-              <div class="gallery-play-icon"><i class="fas fa-play"></i></div>
+              <div class="gallery-play-icon"><i class="fas fa-search-plus"></i></div>
               <h4 class="gallery-item-title">Continuous Hot-Dip Tinning</h4>
               <p class="gallery-item-desc">10–30µm Uniform Solder Coating</p>
             </div>
           </div>
 
-          <!-- Item 6: Laser Optical Micrometer Inspection Video -->
-          <div class="gallery-card glass-card" data-category="videos facility" data-type="video"
-            data-src="assets/videos/2.mp4" data-title="Dual-Axis Laser Micrometer Quality Control"
+          <!-- Item 6: Laser Optical Micrometer Inspection -->
+          <div class="gallery-card glass-card" data-category="facility" data-type="image"
+            data-src="assets/images/laser_micrometer_inspection.jpg" data-title="Dual-Axis Laser Micrometer Quality Control"
             data-desc="Real-time in-line dimension monitoring for ±0.005mm width and thickness tolerance.">
-            <video autoplay loop muted playsinline>
-              <source src="assets/videos/2.mp4" type="video/mp4">
-            </video>
-            <span class="gallery-media-badge"><i class="fas fa-video"></i> HD Video</span>
+            <img src="assets/images/laser_micrometer_inspection.jpg" alt="Laser Optical Inspection">
+            <span class="gallery-media-badge"><i class="fas fa-camera"></i> Photo</span>
             <div class="gallery-overlay">
-              <div class="gallery-play-icon"><i class="fas fa-play"></i></div>
+              <div class="gallery-play-icon"><i class="fas fa-search-plus"></i></div>
               <h4 class="gallery-item-title">Laser Optical Inspection</h4>
               <p class="gallery-item-desc">Dual-Axis Micrometer Monitoring</p>
+            </div>
+          </div>
+
+          <!-- Item 7: Cleanroom Robotics Facility -->
+          <div class="gallery-card glass-card" data-category="facility" data-type="image"
+            data-src="assets/images/about_company.jpg" data-title="Automated Cleanroom Robotics"
+            data-desc="Class 10,000 cleanroom environment for precision solar ribbon production.">
+            <img src="assets/images/about_company.jpg" alt="Automated Cleanroom Robotics">
+            <span class="gallery-media-badge"><i class="fas fa-camera"></i> Photo</span>
+            <div class="gallery-overlay">
+              <div class="gallery-play-icon"><i class="fas fa-search-plus"></i></div>
+              <h4 class="gallery-item-title">Cleanroom Robotics</h4>
+              <p class="gallery-item-desc">Automated Cleanroom Assembly</p>
+            </div>
+          </div>
+
+          <!-- Item 8: Precision PV Busbar Matrix -->
+          <div class="gallery-card glass-card" data-category="products" data-type="image"
+            data-src="assets/images/pv_busbar_product.jpg" data-title="Precision PV Busbar Matrix"
+            data-desc="Heavy-duty current collection busbars soldered across solar cell strings.">
+            <img src="assets/images/pv_busbar_product.jpg" alt="Precision PV Busbar Matrix">
+            <span class="gallery-media-badge"><i class="fas fa-camera"></i> Photo</span>
+            <div class="gallery-overlay">
+              <div class="gallery-play-icon"><i class="fas fa-search-plus"></i></div>
+              <h4 class="gallery-item-title">PV Busbar Matrix</h4>
+              <p class="gallery-item-desc">Heavy-Duty Cell Interconnect</p>
             </div>
           </div>
 
@@ -729,80 +743,10 @@
         </div>
       </div>
 
-      <!-- Upcoming Events -->
-      <div id="events">
-        <div class="text-center">
-          <span class="section-tag">Global Exhibitions</span>
-          <h2 class="section-title">Upcoming <span class="text-gradient">Events & Expos</span></h2>
-          <p class="section-subtitle">Meet our executive and metallurgical engineering team at top international solar
-            expos.</p>
-        </div>
-
-        <div class="events-grid">
-          <div class="event-card glass-card">
-            <div>
-              <span class="event-date">Oct 03 – 05, 2026</span>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Renewable Energy India Expo (REI)</h3>
-              <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">India Expo Centre, Greater
-                Noida, Delhi NCR • Booth #3.142</p>
-            </div>
-            <a href="upcoming-events.html" class="btn btn-outline"
-              style="padding: 0.4rem 1rem; font-size: 0.85rem; align-self: flex-start;">Schedule Meeting</a>
-          </div>
-
-          <div class="event-card glass-card">
-            <div>
-              <span class="event-date">Jun 18 – 20, 2027</span>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Intersolar Europe</h3>
-              <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Messe München, Munich,
-                Germany • Hall A2, Booth 380</p>
-            </div>
-            <a href="upcoming-events.html" class="btn btn-outline"
-              style="padding: 0.4rem 1rem; font-size: 0.85rem; align-self: flex-start;">Schedule Meeting</a>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- Quality Certifications -->
-  <section class="certifications section-padding" id="certifications">
-    <div class="container">
-      <div class="text-center">
-        <span class="section-tag">Quality Assurance</span>
-        <h2 class="section-title">Global Quality & <span class="text-gradient">Certifications</span></h2>
-        <p class="section-subtitle">Rigorously tested to international standards for thermal cycling, solderability, and
-          salt mist corrosion resistance.</p>
-      </div>
 
-      <div class="cert-grid">
-        <div class="cert-card glass-card">
-          <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-          <h4 style="font-size: 1rem;">ISO 9001:2015</h4>
-          <p style="font-size: 0.8rem; color: var(--text-muted);">Quality Management Certified</p>
-        </div>
-
-        <div class="cert-card glass-card">
-          <div class="cert-icon"><i class="fas fa-leaf"></i></div>
-          <h4 style="font-size: 1rem;">ISO 14001:2015</h4>
-          <p style="font-size: 0.8rem; color: var(--text-muted);">Environmental Management</p>
-        </div>
-
-        <div class="cert-card glass-card">
-          <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
-          <h4 style="font-size: 1rem;">RoHS Compliant</h4>
-          <p style="font-size: 0.8rem; color: var(--text-muted);">Hazardous Substances Safe</p>
-        </div>
-
-        <div class="cert-card glass-card">
-          <div class="cert-icon"><i class="fas fa-check-circle"></i></div>
-          <h4 style="font-size: 1rem;">REACH Approved</h4>
-          <p style="font-size: 0.8rem; color: var(--text-muted);">Chemical Safety Compliance</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Symmetrical Contact & RFQ Section -->
   <section class="contact section-padding" id="contact">
@@ -820,7 +764,7 @@
             </p>
 
             <div class="contact-detail-item">
-              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact-icon icon-blue"><i class="fas fa-map-marker-alt"></i></div>
               <div>
                 <h4 style="font-size: 0.9rem; font-weight: 700;">Plant Location Address</h4>
                 <p style="font-size: 0.825rem; color: var(--text-muted);">B 11, Industrial Estate, Partapur, Meerut,
@@ -829,20 +773,20 @@
             </div>
 
             <div class="contact-detail-item">
-              <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="contact-icon icon-green"><i class="fas fa-phone-alt"></i></div>
               <div>
                 <h4 style="font-size: 0.9rem; font-weight: 700;">Call Anytime</h4>
                 <p style="font-size: 0.825rem; color: var(--text-muted);"><a href="tel:+917409444444"
-                    style="color: var(--accent-gold);">+91-7409444444</a></p>
+                    style="color: var(--brand-blue); font-weight: 600;">+91-7409444444</a></p>
               </div>
             </div>
 
             <div class="contact-detail-item">
-              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-icon icon-amber"><i class="fas fa-envelope"></i></div>
               <div>
                 <h4 style="font-size: 0.9rem; font-weight: 700;">Email Address</h4>
                 <p style="font-size: 0.825rem; color: var(--text-muted);"><a href="mailto:info@sumatielectronics.com"
-                    style="color: var(--accent-gold);">info@sumatielectronics.com</a></p>
+                    style="color: var(--brand-blue); font-weight: 600;">info@sumatielectronics.com</a></p>
               </div>
             </div>
           </div>
@@ -875,8 +819,10 @@
                 class="fas fa-industry"></i> Meerut Plant Facility</span>
             <h3 style="font-size: 1.65rem; color: #fff; margin-bottom: 0.4rem; font-weight: 800;">5 GW Automated Plant
             </h3>
-            <p style="color: rgba(255, 255, 255, 0.72); font-size: 0.875rem; margin-bottom: 1.1rem; line-height: 1.5; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">
-              Integrated manufacturing facility located at B 11, Industrial Estate, Partapur, Meerut, UP featuring automated wire drawing, continuous annealing, and laser optical inspection.
+            <p
+              style="color: rgba(255, 255, 255, 0.72); font-size: 0.875rem; margin-bottom: 1.1rem; line-height: 1.5; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">
+              Integrated manufacturing facility located at B 11, Industrial Estate, Partapur, Meerut, UP featuring
+              automated wire drawing, continuous annealing, and laser optical inspection.
             </p>
             <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
               <a href="contact.html" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;"><i
@@ -896,18 +842,23 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-                    <a href="index.html" class="brand-logo" style="margin-bottom: 0.85rem;">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 0.85rem;">
             <img src="assets/images/logo_white.png" alt="Sumati Renewables Logo" class="logo-img logo-white">
             <img src="assets/images/logo_blue.png" alt="Sumati Renewables Logo" class="logo-img logo-blue">
           </a>
           <p class="footer-desc">
-            Sumati is a trusted leader in PV Ribbon, PV Wire, and PV Busbar solutions, delivering high-precision, reliable, and performance-driven products for modern solar modules.
+            Sumati is a trusted leader in PV Ribbon, PV Wire, and PV Busbar solutions, delivering high-precision,
+            reliable, and performance-driven products for modern solar modules.
           </p>
           <div class="social-icon-bar">
-            <a href="https://www.facebook.com/profile.php?id=61550573093860" target="_blank" rel="noopener" class="social-icon-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/company/sumati-electronics-pvt-ltd/" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://x.com/SumatiElec" target="_blank" rel="noopener" class="social-icon-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/sumati_electronics/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61550573093860" target="_blank" rel="noopener"
+              class="social-icon-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/sumati-electronics-pvt-ltd/" target="_blank" rel="noopener"
+              class="social-icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://x.com/SumatiElec" target="_blank" rel="noopener" class="social-icon-link"
+              aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/sumati_electronics/" target="_blank" rel="noopener"
+              class="social-icon-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
 
@@ -918,7 +869,6 @@
             <li><a href="our-company.html">Our Company</a></li>
             <li><a href="our-manufacturing.html">Our Manufacturing</a></li>
             <li><a href="gallery.html">Media & Gallery</a></li>
-            <li><a href="upcoming-events.html">Upcoming Events</a></li>
             <li><a href="career.html">Career</a></li>
           </ul>
         </div>
@@ -942,18 +892,22 @@
           </p>
           <p style="color: var(--text-muted); font-size: 0.825rem; margin-bottom: 0.35rem;">
             <i class="fas fa-phone-alt" style="color: var(--accent-gold); margin-right: 0.4rem;"></i>
-            <a href="tel:+917409444444" style="color: var(--text-muted); transition: color 0.2s ease;">+91-7409444444</a>
+            <a href="tel:+917409444444"
+              style="color: var(--text-muted); transition: color 0.2s ease;">+91-7409444444</a>
           </p>
           <p style="color: var(--text-muted); font-size: 0.825rem;">
             <i class="fas fa-envelope" style="color: var(--accent-gold); margin-right: 0.4rem;"></i>
-            <a href="mailto:info@sumatielectronics.com" style="color: var(--text-muted); transition: color 0.2s ease;">info@sumatielectronics.com</a>
+            <a href="mailto:info@sumatielectronics.com"
+              style="color: var(--text-muted); transition: color 0.2s ease;">info@sumatielectronics.com</a>
           </p>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div>&copy; 2026 Sumati Renewables (Sumati Electronics Pvt. Ltd.). All rights reserved.</div>
-        <div>Designed and Developed By: <a href="https://smartdigitalwings.com/" target="_blank" rel="noopener" style="color: var(--accent-gold); font-weight: 600; transition: color 0.2s ease;">Smart Digital Wings</a></div>
+        <div>Designed and Developed By: <a href="https://smartdigitalwings.com/" target="_blank" rel="noopener"
+            style="color: var(--accent-gold); font-weight: 600; transition: color 0.2s ease;">Smart Digital Wings</a>
+        </div>
       </div>
     </div>
   </footer>
