@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initRibbonCalculator();
   initRFQForm();
   initStatCounters();
+  initProductSlider();
 });
 
 /* ==========================================================================
@@ -638,8 +639,8 @@ function initGalleryLightbox() {
       mediaWrapper.appendChild(img);
     }
 
-    if (titleElem) titleElem.textContent = title || '';
-    if (descElem) descElem.textContent = desc || '';
+    if (titleElem) titleElem.textContent = '';
+    if (descElem) descElem.textContent = '';
     if (counterElem) counterElem.textContent = `${index + 1} / ${activeCards.length}`;
 
     lightbox.classList.add('active');
@@ -809,3 +810,61 @@ function initStatCounters() {
   window.addEventListener('scroll', checkScroll);
   checkScroll();
 }
+
+/* ==========================================================================
+   11. Product Internal Pages - 4-in-a-Row Image Slider
+   ========================================================================== */
+function initProductSlider() {
+  const wrappers = document.querySelectorAll('.product-slider-wrapper');
+  if (!wrappers.length) return;
+
+  wrappers.forEach(wrapper => {
+    const track = wrapper.querySelector('.product-slider-track');
+    const prevBtn = wrapper.querySelector('.prev-arrow');
+    const nextBtn = wrapper.querySelector('.next-arrow');
+    if (!track) return;
+
+    const getScrollAmount = () => {
+      const item = track.querySelector('.product-slide-item');
+      return item ? item.offsetWidth + 20 : 260;
+    };
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+      });
+    }
+
+    // Auto-scroll loop
+    let autoInterval = null;
+    const startAuto = () => {
+      stopAuto();
+      autoInterval = setInterval(() => {
+        const scrollAmt = getScrollAmount();
+        if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 15) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          track.scrollBy({ left: scrollAmt, behavior: 'smooth' });
+        }
+      }, 3500);
+    };
+
+    const stopAuto = () => {
+      if (autoInterval) clearInterval(autoInterval);
+    };
+
+    track.addEventListener('mouseenter', stopAuto);
+    track.addEventListener('mouseleave', startAuto);
+    track.addEventListener('touchstart', stopAuto, { passive: true });
+    track.addEventListener('touchend', startAuto, { passive: true });
+
+    startAuto();
+  });
+}
+

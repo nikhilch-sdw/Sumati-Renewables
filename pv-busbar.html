@@ -49,7 +49,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="index.html#3d-demo" class="nav-link">3D Solar Tech</a>
+          <a href="3d-solar-tech.html" class="nav-link">3D Solar Tech</a>
         </div>
 
         <div class="nav-item">
@@ -78,14 +78,22 @@
     </div>
   </header>
 
-  <!-- Page Banner -->
-  <section class="section-padding" style="padding-top: 7rem; padding-bottom: 2.5rem; background: var(--bg-secondary);">
-    <div class="container text-center">
-      <span class="section-tag">Heavy Duty Current Conductors</span>
-      <h1 class="section-title">Precision <span class="text-gradient">PV Busbar</span></h1>
-      <p class="section-subtitle">Ultra-flat tinned copper busbar providing high current capacity for module string interconnects.</p>
+  <!-- Minimalist Breadcrumb -->
+  <nav class="page-breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item">
+          <a href="index.html" class="breadcrumb-link"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+        <li class="breadcrumb-item">
+          <a href="index.html#products" class="breadcrumb-link">Products</a>
+        </li>
+        <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+        <li class="breadcrumb-item active" aria-current="page">PV Busbar</li>
+      </ol>
     </div>
-  </section>
+  </nav>
 
   <!-- Equal Height Product Showcase Column -->
   <section class="section-padding">
@@ -142,7 +150,7 @@
   <!-- Detailed Product Description & Engineering Highlights Section -->
   <section class="section-padding section-engineering-insights">
     <div class="container">
-      <div style="max-width: 960px; margin: 0 auto;">
+      <div style="max-width: 1160px; margin: 0 auto;">
         <div class="text-center" style="margin-bottom: 2.5rem;">
           <span class="section-tag section-tag-amber"><i class="fas fa-layer-group"></i> Heavy-Duty Busbar</span>
           <h2 class="section-title">Detailed Product <span class="text-gradient-flame">Description</span></h2>
@@ -164,39 +172,53 @@
           </p>
         </div>
 
-        <!-- 3 Feature Highlight Cards -->
-        <div class="mfg-minimal-grid">
-          <div class="mfg-step-card">
-            <div class="mfg-step-header">
-              <div class="mfg-icon-box"><i class="fas fa-cut"></i></div>
-              <span class="mfg-step-num">01</span>
+        <!-- Product Showcase Slider (4 Images in a row) -->
+        <div class="product-slider-container">
+          <div class="product-slider-wrapper">
+            <button class="slider-arrow prev-arrow" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+            <div class="product-slider-track">
+              <div class="product-slide-item">
+                <div class="slide-img-box">
+                  <img src="assets/images/pv_busbar_product.jpg" alt="Precision PV Busbar Matrix" loading="lazy">
+                </div>
+              </div>
+              <div class="product-slide-item">
+                <div class="slide-img-box">
+                  <img src="assets/images/reflective_busbar_product.jpg" alt="Reflective PV Busbar Texture" loading="lazy">
+                </div>
+              </div>
+              <div class="product-slide-item">
+                <div class="slide-img-box">
+                  <img src="assets/images/pv_ribbon_product.jpg" alt="Precision PV Ribbon Spools" loading="lazy">
+                </div>
+              </div>
+              <div class="product-slide-item">
+                <div class="slide-img-box">
+                  <img src="assets/images/multi_busbar_wire.jpg" alt="Multi-Busbar MBB Wire" loading="lazy">
+                </div>
+              </div>
+              <div class="product-slide-item">
+                <div class="slide-img-box">
+                  <img src="assets/images/hot_dip_tinning.jpg" alt="Continuous Hot-Dip Tinning Line" loading="lazy">
+                </div>
+              </div>
+              <div class="product-slide-item">
+                <div class="slide-img-box">
+                  <img src="assets/images/laser_micrometer_inspection.jpg" alt="Laser Optical Inspection" loading="lazy">
+                </div>
+              </div>
+              <div class="product-slide-item">
+                <div class="slide-img-box">
+                  <img src="assets/images/about_company.jpg" alt="Automated Cleanroom Robotics" loading="lazy">
+                </div>
+              </div>
+              <div class="product-slide-item">
+                <div class="slide-img-box">
+                  <img src="assets/images/factory_facility.jpg" alt="Manufacturing Plant Facility" loading="lazy">
+                </div>
+              </div>
             </div>
-            <div>
-              <h3 class="mfg-step-title">Zero-Burr Precision Slitting</h3>
-              <p class="mfg-step-desc">Smooth rounded edges preventing insulation puncture or lamination breakdown.</p>
-            </div>
-          </div>
-
-          <div class="mfg-step-card">
-            <div class="mfg-step-header">
-              <div class="mfg-icon-box"><i class="fas fa-bolt"></i></div>
-              <span class="mfg-step-num">02</span>
-            </div>
-            <div>
-              <h3 class="mfg-step-title">High Current Rating (Up to 35A)</h3>
-              <p class="mfg-step-desc">Prevents resistive heating hotspots in 600W+ high-power solar module strings.</p>
-            </div>
-          </div>
-
-          <div class="mfg-step-card">
-            <div class="mfg-step-header">
-              <div class="mfg-icon-box"><i class="fas fa-shield-alt"></i></div>
-              <span class="mfg-step-num">03</span>
-            </div>
-            <div>
-              <h3 class="mfg-step-title">25+ Year Corrosion Shield</h3>
-              <p class="mfg-step-desc">Continuous hot-dip tinned surface layer resisting salt-mist and damp heat exposure.</p>
-            </div>
+            <button class="slider-arrow next-arrow" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
           </div>
         </div>
       </div>
@@ -216,10 +238,9 @@
             Sumati is a trusted leader in PV Ribbon, PV Wire, and PV Busbar solutions, delivering high-precision, reliable, and performance-driven products for modern solar modules.
           </p>
           <div class="social-icon-bar">
-            <a href="https://www.facebook.com/profile.php?id=61550573093860" target="_blank" rel="noopener" class="social-icon-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/company/sumati-electronics-pvt-ltd/" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://x.com/SumatiElec" target="_blank" rel="noopener" class="social-icon-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/sumati_electronics/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/SumatiRenewables/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://in.linkedin.com/company/sumati-renewables-ltd" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/sumati_renewables_ltd/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
 
@@ -229,6 +250,7 @@
             <li><a href="index.html#products">Products</a></li>
             <li><a href="our-company.html">Our Company</a></li>
             <li><a href="our-manufacturing.html">Our Manufacturing</a></li>
+            <li><a href="3d-solar-tech.html">3D Solar Tech</a></li>
             <li><a href="gallery.html">Media & Gallery</a></li>
             <li><a href="career.html">Career</a></li>
           </ul>
