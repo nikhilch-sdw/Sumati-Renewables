@@ -65,7 +65,20 @@ function initMobileNav() {
   
   if (!toggleBtn || !navMenu) return;
 
-  toggleBtn.addEventListener('click', () => {
+  function closeMenu() {
+    navMenu.classList.remove('active');
+    document.querySelectorAll('.nav-item.dropdown-open').forEach(item => {
+      item.classList.remove('dropdown-open');
+    });
+    const icon = toggleBtn.querySelector('i');
+    if (icon) {
+      icon.classList.add('fa-bars');
+      icon.classList.remove('fa-times');
+    }
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
     navMenu.classList.toggle('active');
     const icon = toggleBtn.querySelector('i');
     if (icon) {
@@ -74,15 +87,43 @@ function initMobileNav() {
     }
   });
 
+  // Handle nav link clicks
   document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      const icon = toggleBtn.querySelector('i');
-      if (icon) {
-        icon.classList.add('fa-bars');
-        icon.classList.remove('fa-times');
+    link.addEventListener('click', (e) => {
+      const parentItem = link.closest('.nav-item');
+      const hasDropdown = parentItem && parentItem.querySelector('.dropdown-menu');
+
+      // If mobile view and item has a dropdown menu, toggle dropdown accordion
+      if (window.innerWidth <= 991 && hasDropdown) {
+        e.preventDefault();
+        parentItem.classList.toggle('dropdown-open');
+        return;
       }
+
+      // Otherwise, close the mobile menu
+      closeMenu();
     });
+  });
+
+  // Clicking dropdown items closes the menu
+  document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  // Click outside to close
+  document.addEventListener('click', (e) => {
+    if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+      closeMenu();
+    }
   });
 }
 
